@@ -77,13 +77,9 @@
         </propertyfile>
     </target>
 
-    <property name="api.target" value="P://public_html//Utilities-API"/>
-    <target name="copyApi" depends="-javadoc-build">
-        <zip destfile="${api.target}/API.zip" basedir="${dist.javadoc.dir}"  />
-        <zip destfile="${api.target}/SRC.zip" basedir="${src.dir}"  />
-        <copy todir="${api.target}">
-            <fileset dir="${dist.javadoc.dir}"/>
-        </copy>
+    <target name="-post-jar" depends="-javadoc-build">
+        <zip destfile="${dist.dir}/Utilities-api.zip" basedir="${dist.javadoc.dir}"  />
+        <zip destfile="${dist.dir}/Utilitis-src.zip" basedir="${src.dir}"  />
     </target>
 
 </project>
