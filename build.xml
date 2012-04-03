@@ -78,8 +78,8 @@
     </target>
 
     <target name="-post-jar" depends="-javadoc-build">
-        <zip destfile="${dist.dir}/Utilities-api.zip" basedir="${dist.javadoc.dir}"  />
-        <zip destfile="${dist.dir}/Utilitis-src.zip" basedir="${src.dir}"  />
+        <zip destfile="${dist.dir}/common-extension-lib-JavaDoc.zip" basedir="${dist.javadoc.dir}"  />
+        <zip destfile="${dist.dir}/common-extension-lib-src.zip" basedir="${src.dir}"  />
     </target>
 
 </project>
