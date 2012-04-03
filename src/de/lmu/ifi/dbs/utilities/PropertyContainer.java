@@ -30,9 +30,14 @@ public class PropertyContainer {
     protected final File configfile;
     protected String comment = null;
 
+    public PropertyContainer(Properties parent) {
+        properties.putAll(parent);
+        configfile = null;
+    }
+
     /**
      * uses the specified file as onfig file
-     * 
+     *
      * @param file
      */
     public PropertyContainer(File file) throws IOException {
@@ -46,7 +51,7 @@ public class PropertyContainer {
     /**
      * Create a new PropertyContainer in the specified directory. If the
      * directoriy or configfile doesn't exist, it'll be created
-     * 
+     *
      * @param dir
      * @param filename
      * @throws IOException
@@ -76,6 +81,7 @@ public class PropertyContainer {
 
     /**
      * returns list of keys in sorted order
+     *
      * @return
      */
     public List<String> getKeys() {
@@ -118,7 +124,7 @@ public class PropertyContainer {
             configfile.createNewFile();
         }
         OutputStream out = new BufferedOutputStream(new FileOutputStream(configfile));
-        properties.store( out, comment);
+        properties.store(out, comment);
         out.close();
     }
 
@@ -340,7 +346,7 @@ public class PropertyContainer {
 
     /**
      * try to configure the object by the given annotations
-     * 
+     *
      * @param myObject object containing annotations at fields
      * @throws IllegalArgumentException
      * @throws IllegalAccessException
