@@ -120,7 +120,7 @@ public class Collections2 {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < in.size(); i++) {
             sb.append(in.get(i));
-            if (i < in.size()) {
+            if (i < in.size()-1) {
                 sb.append(glue);
             }
         }
