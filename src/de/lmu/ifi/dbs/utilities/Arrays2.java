@@ -13,6 +13,36 @@ public class Arrays2 {
     private Arrays2() {
     }
 
+    public static void abs(byte[] data) {
+        for (int i = 0; i < data.length; i++) {
+            data[i] = (byte) Math.abs(data[i]);
+        }
+    }
+
+    public static void abs(int[] data) {
+        for (int i = 0; i < data.length; i++) {
+            data[i] = Math.abs(data[i]);
+        }
+    }
+
+    public static void abs(float[] data) {
+        for (int i = 0; i < data.length; i++) {
+            data[i] = Math.abs(data[i]);
+        }
+    }
+
+    public static void abs(short[] data) {
+        for (int i = 0; i < data.length; i++) {
+            data[i] = (short) Math.abs(data[i]);
+        }
+    }
+
+    public static void abs(double[] data) {
+        for (int i = 0; i < data.length; i++) {
+            data[i] = Math.abs(data[i]);
+        }
+    }
+
     public static void reverse(Object[] o) {
         int left = 0; // index of leftmost element
         int right = o.length - 1; // index of rightmost element
@@ -91,7 +121,7 @@ public class Arrays2 {
     /**
      * Returns a new Array with unique elements from the source array. The
      * length of the returned array is in [0; arr.length]
-     * 
+     *
      * @param arr
      * @return array with unique elements from arr
      */
@@ -110,7 +140,7 @@ public class Arrays2 {
     /**
      * Returns a new array with unique elements from the source array. The
      * length of the returned array is in [0; arr.length]
-     * 
+     *
      * @param arr
      * @return array with unique elements from arr
      */
@@ -186,7 +216,7 @@ public class Arrays2 {
     /**
      * Returns a new Array with unique elements from the source array. The
      * length of the returned array is in [0; arr.length].
-     * 
+     *
      * @param arr
      * @param accuracy defines the allowed distance up to which 2 doubles are
      * equal
@@ -226,7 +256,7 @@ public class Arrays2 {
     /**
      * join array of objects by using a glue string and the Object's toString
      * methods.
-     * 
+     *
      * @param arr
      * @param glue
      * @return string of joined toString values
@@ -264,7 +294,7 @@ public class Arrays2 {
     /**
      * return first index of Object o in array a or -1 if the object was not
      * found
-     * 
+     *
      * @param src source array
      * @param o object to search
      * @return index of the object [0, a.length] or -1 if not found
@@ -287,7 +317,7 @@ public class Arrays2 {
     /**
      * return first index of integer o in array a or -1 if the integer was not
      * found
-     * 
+     *
      * @param src source array
      * @param o object to search
      * @return index of the object [0, a.length] or -1 if not found
@@ -306,7 +336,8 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data
      * @param glue
-     * @return A string containing the objects of <code>data</code> separated by
+     * @return A string containing the objects of
+     * <code>data</code> separated by
      * <code>glue</code>
      */
     public static String join(byte[] data, String glue) {
@@ -324,7 +355,8 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data
      * @param glue
-     * @return A string containing the objects of <code>data</code> separated by
+     * @return A string containing the objects of
+     * <code>data</code> separated by
      * <code>glue</code>
      */
     public static String join(int[] data, String glue) {
@@ -346,9 +378,10 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data
      * @param glue
-     * @return A string containing the objects of <code>data</code> separated by
-     * <code>glue</code>, rounded to the <code>dec</code><sup>th</sup> decimale
-     * place
+     * @return A string containing the objects of
+     * <code>data</code> separated by
+     * <code>glue</code>, rounded to the
+     * <code>dec</code><sup>th</sup> decimale place
      */
     public static String join(float[] data, String glue, int dec) {
         StringBuilder sb = new StringBuilder(data.length * 2);
@@ -365,9 +398,10 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data
      * @param glue
-     * @return A string containing the objects of <code>data</code> separated by
-     * <code>glue</code>, rounded to the <code>dec</code><sup>th</sup> decimale
-     * place
+     * @return A string containing the objects of
+     * <code>data</code> separated by
+     * <code>glue</code>, rounded to the
+     * <code>dec</code><sup>th</sup> decimale place
      */
     public static String join(float[] data, String glue) {
         StringBuilder sb = new StringBuilder(data.length * 2);
@@ -384,7 +418,8 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data
      * @param glue
-     * @return A string containing the objects of <code>data</code> separated by
+     * @return A string containing the objects of
+     * <code>data</code> separated by
      * <code>glue</code>
      */
     public static String join(double[] data, String glue) {
@@ -401,7 +436,7 @@ public class Arrays2 {
     /**
      * Join array of objects by using a glue string and the Object's toString
      * methods.
-     * 
+     *
      * @param data
      * @param glue
      * @param formatString which formats a single element of the array
@@ -429,8 +464,8 @@ public class Arrays2 {
 
     /**
      * @param data
-     * @return squared length of array
-     * @todo Remove as it is not really a thin of arrays but of vectors
+     * @return squared length of array @todo Remove as it is not really a thin
+     * of arrays but of vectors
      * @deprecated as the semantic is not clear: vector length, componentwise
      * sum, etc
      */
@@ -445,8 +480,8 @@ public class Arrays2 {
     /**
      * @see #lengthSquared(double[])
      * @param data
-     * @return squarerooted length
-     * @todo Remove as it is not really a thin of arrays but of vectors
+     * @return squarerooted length @todo Remove as it is not really a thin of
+     * arrays but of vectors
      * @deprecated as the semantic is not clear: vector length, componentwise
      * sum, etc
      */
@@ -456,7 +491,7 @@ public class Arrays2 {
 
     /**
      * multilpy array with factor
-     * 
+     *
      * @param data source array
      * @param factor
      */
@@ -471,7 +506,7 @@ public class Arrays2 {
 
     /**
      * multilpy array with factors from other array: data[i] *= factors[i]
-     * 
+     *
      * @param data source array
      * @param factors
      */
@@ -491,7 +526,7 @@ public class Arrays2 {
 
     /**
      * multilpy array with factors from other array: data[i] *= factors[i]
-     * 
+     *
      * @param data source array
      * @param factor
      */
@@ -506,7 +541,7 @@ public class Arrays2 {
 
     /**
      * multilpy array with factors from other array: data[i] *= factors[i]
-     * 
+     *
      * @param data source array
      * @param factors
      */
@@ -527,7 +562,7 @@ public class Arrays2 {
     /**
      * divide an int array by a given value and write the result into a double
      * array: target[i] = 1d * data[i] / factor;
-     * 
+     *
      * @param data source array
      * @param factor
      * @param target the target array (may be null)
@@ -555,7 +590,7 @@ public class Arrays2 {
 
     /**
      * divide array by a given value: data[i] /= factor
-     * 
+     *
      * @param data source array
      * @param factor
      */
@@ -565,7 +600,7 @@ public class Arrays2 {
 
     /**
      * divide array with values from other array: data[i] /= factors[i]
-     * 
+     *
      * @param data source array
      * @param factors
      */
@@ -584,7 +619,7 @@ public class Arrays2 {
 
     /**
      * divide array by a given value: data[i] /= factor
-     * 
+     *
      * @param data source array
      * @param factor
      */
@@ -594,7 +629,7 @@ public class Arrays2 {
 
     /**
      * divide array with values from other array: data[i] /= factors[i]
-     * 
+     *
      * @param data source array
      * @param factors
      */
@@ -613,9 +648,9 @@ public class Arrays2 {
 
     /**
      * adds b to a: a[i] += b[i]
-     * 
+     *
      * Values of b won't be changed.
-     * 
+     *
      * @param a
      * @param b
      */
@@ -627,9 +662,9 @@ public class Arrays2 {
 
     /**
      * adds b to a: a[i] += b[i]
-     * 
+     *
      * Values of b won't be changed
-     * 
+     *
      * @param a
      * @param b
      */
@@ -641,9 +676,9 @@ public class Arrays2 {
 
     /**
      * adds b to a: a[i] += b[i]
-     * 
+     *
      * Values of b won't be changed
-     * 
+     *
      * @param a
      * @param b
      */
@@ -655,9 +690,9 @@ public class Arrays2 {
 
     /**
      * adds b to a: a[i] += b[i]
-     * 
+     *
      * Values of b won't be changed
-     * 
+     *
      * @param a
      * @param b
      */
@@ -669,7 +704,7 @@ public class Arrays2 {
 
     /**
      * adds b to a: a[i] += b
-     * 
+     *
      * @param a
      * @param b
      */
@@ -699,7 +734,7 @@ public class Arrays2 {
 
     /**
      * Returns the sum of all elements in this array
-     * 
+     *
      * @param a
      * @return sum of all a_i
      */
@@ -713,7 +748,7 @@ public class Arrays2 {
 
     /**
      * Returns the sum of all elements in this array
-     * 
+     *
      * @param a
      * @return sum of all a_i
      */
@@ -727,7 +762,7 @@ public class Arrays2 {
 
     /**
      * Returns the sum of all elements in this array
-     * 
+     *
      * @param a
      * @return sum of all a_i
      */
@@ -741,7 +776,7 @@ public class Arrays2 {
 
     /**
      * Returns the sum of all elements in this array
-     * 
+     *
      * @param a
      * @return sum of all a_i
      */
@@ -755,7 +790,7 @@ public class Arrays2 {
 
     /**
      * Returns the sum of a subarray
-     * 
+     *
      * @param arr the input array
      * @param a start index inclusive
      * @param b end index inclusive
@@ -771,7 +806,7 @@ public class Arrays2 {
 
     /**
      * Returns the sum of a subarray
-     * 
+     *
      * @param arr the input array
      * @param a start index inclusive
      * @param b end index inclusive
@@ -787,7 +822,7 @@ public class Arrays2 {
 
     /**
      * Returns the sum of a subarray
-     * 
+     *
      * @param arr the input array
      * @param a start index inclusive
      * @param b end index inclusive
@@ -803,7 +838,7 @@ public class Arrays2 {
 
     /**
      * Delegates to {@link #add(double[], double)}
-     * 
+     *
      * @param a
      * @param b
      * @Deprecated since April 2010
@@ -828,7 +863,7 @@ public class Arrays2 {
 
     /**
      * Performs a[i] = a[i]-b[i]
-     * 
+     *
      * @param a
      * @param b
      */
@@ -840,7 +875,7 @@ public class Arrays2 {
 
     /**
      * Performs a[i] = a[i]-b[i]
-     * 
+     *
      * @param a
      * @param b
      */
@@ -852,7 +887,7 @@ public class Arrays2 {
 
     /**
      * Performs a[i] = a[i]-b[i]
-     * 
+     *
      * @param a
      * @param b
      */
@@ -864,7 +899,7 @@ public class Arrays2 {
 
     /**
      * Performs out[i] = a[i]-b[i]
-     * 
+     *
      * @param a
      * @param b
      * @param out containing a-b
@@ -882,7 +917,7 @@ public class Arrays2 {
 
     /**
      * Performs out[i] = a[i]-b[i]
-     * 
+     *
      * @param a
      * @param b
      * @param out containing a-b
@@ -901,13 +936,13 @@ public class Arrays2 {
     /**
      * Normalizes the values of an array by mutliplying each value with
      * 1/length(array). Length is the euclidean length.
-     * 
+     *
      * BE AWARE that the euclidean length is the dot product with itself!
-     * 
+     *
      * @param data normalized array or array of NaNs if length was zero
      * @see #length(double[])
-     * @see #mul(double[], double)
-     * @todo Remove as it is not really a thin of arrays but of vectors
+     * @see #mul(double[], double) @todo Remove as it is not really a thin of
+     * arrays but of vectors
      * @deprecated normalize according to what?
      */
     public static void normalize(double[] data) {
@@ -921,7 +956,7 @@ public class Arrays2 {
 
     /**
      * computes the dot product
-     * 
+     *
      * @param o1
      * @param o2
      * @return dot product
@@ -936,7 +971,7 @@ public class Arrays2 {
 
     /**
      * convolve an array with the specified kernel and write output into out
-     * 
+     *
      * @param in input array which will NOT be changed
      * @param out output array with convolved values
      * @param kernel mask (odd size!)
@@ -969,7 +1004,7 @@ public class Arrays2 {
 
     /**
      * convolve an array with the specified kernel and write output into out
-     * 
+     *
      * @param in input array which will NOT be changed
      * @param out output array with convolved values (may be null)
      * @param kernel mask (odd size!)
@@ -1009,7 +1044,7 @@ public class Arrays2 {
 
     /**
      * convolve n array with the specified kernel and write output into out
-     * 
+     *
      * @param in input array which will NOT be changed
      * @param out output array with convolved values
      * @param kernel mask (odd size!)
@@ -1097,7 +1132,7 @@ public class Arrays2 {
     }
 
     /**
-     * 
+     *
      * @param a
      * @return the statistical mean
      * @deprecated
@@ -1110,9 +1145,10 @@ public class Arrays2 {
 
     /**
      * Computes the median of an array which is already sorted.
-     * 
+     *
      * @param a A <em>sorted</em> array.
-     * @return The median value of the sorted array <code>a</code>.
+     * @return The median value of the sorted array
+     * <code>a</code>.
      * @deprecated Replaced by {@link Statistics#median(double[])}
      * @see Statistics#median(double[])
      */
@@ -1122,7 +1158,7 @@ public class Arrays2 {
     }
 
     /**
-     * 
+     *
      * @param a
      * @return
      * @deprecated
@@ -1134,7 +1170,7 @@ public class Arrays2 {
     }
 
     /**
-     * 
+     *
      * @param a
      * @return
      * @deprecated
@@ -1149,7 +1185,7 @@ public class Arrays2 {
      * Find and return the index with the greatest value. If there are >1 maxima
      * with the same value, only the first index will be returned. NaN entries
      * will be ignored.
-     * 
+     *
      * @param a
      * @return max array index of max value or -1 if array is empty or filled
      * with NaNs
@@ -1169,7 +1205,7 @@ public class Arrays2 {
 
     /**
      * returns the greatest value
-     * 
+     *
      * @param a
      * @return
      */
@@ -1182,7 +1218,7 @@ public class Arrays2 {
 
     /**
      * returns the largest value
-     * 
+     *
      * @param a
      * @return
      */
@@ -1196,7 +1232,7 @@ public class Arrays2 {
     /**
      * Find and return the INDEX with the greatest value. If there are >1 maxima
      * with the same value, only the first index will be returned.
-     * 
+     *
      * @param a
      * @return max array index of max value or -1 if array is empty
      */
@@ -1216,7 +1252,7 @@ public class Arrays2 {
     /**
      * Find and return the INDEX with the greatest value. If there are >1 maxima
      * with the same value, only the first index will be returned.
-     * 
+     *
      * @param a
      * @return max array index of max value or -1 if array is empty
      */
@@ -1237,7 +1273,7 @@ public class Arrays2 {
      * Find and return the index with the greatest value. If there are >1 maxima
      * with the same value, only the first index will be returned. NaN entries
      * will be ignored.
-     * 
+     *
      * @param a
      * @return max array index of max value or -1 if array is empty or filled
      * with NaNs
@@ -1259,7 +1295,7 @@ public class Arrays2 {
      * Finds and returns the INDEX with the least value. If there are >1 minima
      * with the same value, only the first index will be returned. NaN entries
      * will be ignored.
-     * 
+     *
      * @param a
      * @return min array index of min value or -1 if array is empty or filled
      * with NaNs
@@ -1281,7 +1317,7 @@ public class Arrays2 {
      * Finds and returns the INDEX with the least value. If there are >1 minima
      * with the same value, only the first index will be returned. NaN entries
      * will be ignored.
-     * 
+     *
      * @param a
      * @return min array index of min value or -1 if array is empty or filled
      * with NaNs
@@ -1301,7 +1337,7 @@ public class Arrays2 {
 
     /**
      * returns the smallest value
-     * 
+     *
      * @param a
      * @return
      */
@@ -1314,7 +1350,7 @@ public class Arrays2 {
 
     /**
      * returns the smallest value
-     * 
+     *
      * @param a
      * @return
      */
@@ -1329,7 +1365,7 @@ public class Arrays2 {
      * Finds and returns the index with the least value. If there are >1 minima
      * with the same value, only the first index will be returned. NaN entries
      * will be ignored.
-     * 
+     *
      * @param a
      * @return min array index of min value or -1 if array is empty or filled
      * with NaNs
@@ -1351,7 +1387,7 @@ public class Arrays2 {
      * Finds and returns the index with the least value. If there are >1 minima
      * with the same value, only the first index will be returned. NaN entries
      * will be ignored.
-     * 
+     *
      * @param a
      * @return min array index of min value or -1 if array is empty or filled
      * with NaNs
@@ -1371,7 +1407,7 @@ public class Arrays2 {
 
     /**
      * replaces all NaNs and Infs with r
-     * 
+     *
      * @param arr
      * @param r
      */
@@ -1385,7 +1421,7 @@ public class Arrays2 {
 
     /**
      * checks whether an object o is contained in arr
-     * 
+     *
      * @see #indexOf(java.lang.Object[], java.lang.Object)
      * @param arr
      * @param o
@@ -1397,7 +1433,7 @@ public class Arrays2 {
 
     /**
      * Finds the first NaN value in the given array.
-     * 
+     *
      * @param in the array to be checked
      * @return the index of the first Double.NaN or -1 if no NaN was found
      */
@@ -1440,7 +1476,9 @@ public class Arrays2 {
      * and throws a warning message to the logger
      *
      * @param src
-     * @return a <code>double[]</code> for each entry in <code>src</code>
+     * @return a
+     * <code>double[]</code> for each entry in
+     * <code>src</code>
      */
     public static double[] convertToDouble(String[] src) {
         return convertToDouble(src, new double[src.length]);
@@ -1496,7 +1534,9 @@ public class Arrays2 {
      * and throws a warning message to the logger
      *
      * @param src
-     * @return a <code>double[]</code> for each entry in <code>src</code>
+     * @return a
+     * <code>double[]</code> for each entry in
+     * <code>src</code>
      */
     public static float[] convertToFloat(String[] src) {
         return convertToFloat(src, new float[src.length]);
@@ -1548,11 +1588,13 @@ public class Arrays2 {
     }
 
     /**
-     * Convert string array to doubles - replaces all non numerics with a 0
-     * and throws a warning message to the logger
+     * Convert string array to doubles - replaces all non numerics with a 0 and
+     * throws a warning message to the logger
      *
      * @param src
-     * @return a <code>double[]</code> for each entry in <code>src</code>
+     * @return a
+     * <code>double[]</code> for each entry in
+     * <code>src</code>
      */
     public static int[] convertToInt(String[] src) {
         return convertToInt(src, new int[src.length]);
