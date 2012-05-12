@@ -116,7 +116,7 @@ public class Statistics {
      * <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub><sup>2</sup>) - avg(a)<sup>2</sup></code>
      */
     public static double var(double[] a) {
-        // VAR(X) = E(X^2) - (E(X))^2
+        // VAR(X) = E(X^2) - E(X)^2
         if (a.length == 0 || a.length == 1) {
             return 0;
         }
