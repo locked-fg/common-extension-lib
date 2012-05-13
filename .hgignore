@@ -6,3 +6,4 @@
 ^lib/junit/junit-3\.8\.2-api\.zip$
 ^lib/junit_4/junit-4\.5-api\.zip$
 ^lib/junit_4/junit-4\.5-src\.jar$
+^release$
