@@ -1,6 +1,7 @@
 package de.lmu.ifi.dbs.utilities;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -11,6 +12,7 @@ public class Collections2 {
 
     /**
      * returns a random sample from the input list
+     *
      * @param <T>
      * @param in source list
      * @param size size of sample
@@ -34,6 +36,7 @@ public class Collections2 {
 
     /**
      * returns a random sample from the input list
+     *
      * @param <T>
      * @param in source list
      * @param ratio percentage of returned elements = Math.round(in.size() * ratio
@@ -54,6 +57,7 @@ public class Collections2 {
 
     /**
      * returns a random sample from the input list
+     *
      * @param <T>
      * @param in source list
      * @param size size of sample
@@ -71,10 +75,10 @@ public class Collections2 {
         }
         // sampling = 0, nothing
         if (size == 0) {
-            return new ArrayList<T>(0);
+            return new ArrayList<>(0);
         }
         // sampling = 100% -> all
-        ArrayList<T> out = new ArrayList<T>(in);
+        ArrayList<T> out = new ArrayList<>(in);
         if (size == in.size()) {
             return out;
         }
@@ -91,11 +95,12 @@ public class Collections2 {
 
     /**
      * Returns a new List with unique elements from the source list.
+     *
      * @param src
      * @return list with unique elements from src
      */
     public static <T> List<T> unique(Collection<T> src) {
-        List<T> dst = new ArrayList<T>(src.size());
+        List<T> dst = new ArrayList<>(src.size());
         for (T elem : src) {
             if (!dst.contains(elem)) {
                 dst.add(elem);
@@ -120,7 +125,7 @@ public class Collections2 {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < in.size(); i++) {
             sb.append(in.get(i));
-            if (i < in.size()-1) {
+            if (i < in.size() - 1) {
                 sb.append(glue);
             }
         }
@@ -128,11 +133,11 @@ public class Collections2 {
     }
 
     /**
-     * Find and return the index with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned. 
+     * Find and return the index with the greatest value. If there are >1 maxima with the same value, only the first
+     * index will be returned.
      *
      * @param in the collection of objects
-     * @return max array index of max value 
+     * @return max array index of max value
      */
     public static int max(Collection<? extends Comparable> in) {
         int pos = -1;
@@ -150,9 +155,10 @@ public class Collections2 {
 
     /**
      * Find and return the object the is the max value
+     *
      * @param <T>
      * @param in
-     * @see #max(java.util.Collection) 
+     * @see #max(java.util.Collection)
      */
     public static <T extends Comparable> T maxValue(Collection<T> in) {
         // don't use max() here to determine the index because the collection
@@ -167,8 +173,8 @@ public class Collections2 {
     }
 
     /**
-     * Find and return the index with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned.
+     * Find and return the index with the greatest value. If there are >1 maxima with the same value, only the first
+     * index will be returned.
      *
      * @param in the collection of objects
      * @param comparator which does the comparisons
@@ -189,8 +195,8 @@ public class Collections2 {
     }
 
     /**
-     * Find and return the index with the smallest value. If there are >1 maxima
-     * with the same value, only the first index will be returned.
+     * Find and return the index with the smallest value. If there are >1 maxima with the same value, only the first
+     * index will be returned.
      *
      * @param a
      * @return max array index of max value
@@ -211,6 +217,7 @@ public class Collections2 {
 
     /**
      * Find and return the object the is the max value
+     *
      * @param <T>
      * @param in
      * @see #max(java.util.Collection)
@@ -228,8 +235,8 @@ public class Collections2 {
     }
 
     /**
-     * Find and return the index with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned.
+     * Find and return the index with the greatest value. If there are >1 maxima with the same value, only the first
+     * index will be returned.
      *
      * @param in the collection of objects
      * @param comparator which does the comparisons
@@ -301,8 +308,7 @@ public class Collections2 {
     }
 
     /**
-     * adds b to a: a[i] += b[i] <br>
-     * Afterwards a has the size of max(a.size(),b.size())
+     * adds b to a: a[i] += b[i] <br> Afterwards a has the size of max(a.size(),b.size())
      *
      * @param a
      * @param b
