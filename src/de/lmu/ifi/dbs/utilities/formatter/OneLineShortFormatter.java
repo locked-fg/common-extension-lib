@@ -9,13 +9,14 @@ import java.util.logging.LogRecord;
 
 /**
  * Formatter that produced logging output like:
- * 
+ *
  * LogLevel: message
  *
- * No Date/Time info is printed - also no new line before the loglevel.
- * Usage in logging.properties:
+ * No Date/Time info is printed - also no new line before the loglevel. Usage in logging.properties:
  * java.util.logging.ConsoleHandler.formatter = de.lmu.ifi.dbs.utilities.formatter.OneLineShortFormatter
- * 
+ *
+ * You might really think about using Log4j instead
+ *
  * @author graf
  */
 public class OneLineShortFormatter extends Formatter {
@@ -29,6 +30,7 @@ public class OneLineShortFormatter extends Formatter {
 
     /**
      * Format the given LogRecord.
+     *
      * @param record the log record to be formatted.
      * @return a formatted log record
      */

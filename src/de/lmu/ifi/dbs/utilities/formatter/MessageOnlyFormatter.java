@@ -16,6 +16,8 @@ import java.util.logging.LogRecord;
  * Usage in logging.properties:
  * java.util.logging.ConsoleHandler.formatter = de.lmu.ifi.dbs.utilities.formatter.MessageOnlyFormatter
  * 
+ * You might really think about using Log4j instead
+ * 
  * @author graf
  */
 public class MessageOnlyFormatter extends Formatter {
