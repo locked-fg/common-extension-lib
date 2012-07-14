@@ -119,8 +119,8 @@ public class Arrays2 {
     }
 
     /**
-     * Returns a new Array with unique elements from the source array. The
-     * length of the returned array is in [0; arr.length]
+     * Returns a new Array with unique elements from the source array. The length of the returned array is in [0;
+     * arr.length]
      *
      * @param arr
      * @return array with unique elements from arr
@@ -138,8 +138,8 @@ public class Arrays2 {
     }
 
     /**
-     * Returns a new array with unique elements from the source array. The
-     * length of the returned array is in [0; arr.length]
+     * Returns a new array with unique elements from the source array. The length of the returned array is in [0;
+     * arr.length]
      *
      * @param arr
      * @return array with unique elements from arr
@@ -214,12 +214,11 @@ public class Arrays2 {
     }
 
     /**
-     * Returns a new Array with unique elements from the source array. The
-     * length of the returned array is in [0; arr.length].
+     * Returns a new Array with unique elements from the source array. The length of the returned array is in [0;
+     * arr.length].
      *
      * @param arr
-     * @param accuracy defines the allowed distance up to which 2 doubles are
-     * equal
+     * @param accuracy defines the allowed distance up to which 2 doubles are equal
      * @return array with unique elements from arr
      */
     @SuppressWarnings("unchecked")
@@ -233,8 +232,7 @@ public class Arrays2 {
         int lastIndex = 0;
 
         /**
-         * TODO quite inefficient! as it uses quadratic runtime! better: sort
-         * and check subsequent elements
+         * TODO quite inefficient! as it uses quadratic runtime! better: sort and check subsequent elements
          */
         if (arr.length > 500) {
             log.fine("array unique is currently quite inefficient! this can be a bottleneck");
@@ -254,8 +252,7 @@ public class Arrays2 {
     }
 
     /**
-     * join array of objects by using a glue string and the Object's toString
-     * methods.
+     * join array of objects by using a glue string and the Object's toString methods.
      *
      * @param arr
      * @param glue
@@ -292,8 +289,7 @@ public class Arrays2 {
     }
 
     /**
-     * return first index of Object o in array a or -1 if the object was not
-     * found
+     * return first index of Object o in array a or -1 if the object was not found
      *
      * @param src source array
      * @param o object to search
@@ -315,8 +311,7 @@ public class Arrays2 {
     }
 
     /**
-     * return first index of integer o in array a or -1 if the integer was not
-     * found
+     * return first index of integer o in array a or -1 if the integer was not found
      *
      * @param src source array
      * @param o object to search
@@ -336,9 +331,7 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data
      * @param glue
-     * @return A string containing the objects of
-     * <code>data</code> separated by
-     * <code>glue</code>
+     * @return A string containing the objects of <code>data</code> separated by <code>glue</code>
      */
     public static String join(byte[] data, String glue) {
         StringBuilder sb = new StringBuilder(data.length * 2);
@@ -355,9 +348,7 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data
      * @param glue
-     * @return A string containing the objects of
-     * <code>data</code> separated by
-     * <code>glue</code>
+     * @return A string containing the objects of <code>data</code> separated by <code>glue</code>
      */
     public static String join(int[] data, String glue) {
         StringBuilder sb = new StringBuilder(data.length * 2);
@@ -378,9 +369,7 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data
      * @param glue
-     * @return A string containing the objects of
-     * <code>data</code> separated by
-     * <code>glue</code>, rounded to the
+     * @return A string containing the objects of <code>data</code> separated by <code>glue</code>, rounded to the
      * <code>dec</code><sup>th</sup> decimale place
      */
     public static String join(float[] data, String glue, int dec) {
@@ -398,9 +387,7 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data
      * @param glue
-     * @return A string containing the objects of
-     * <code>data</code> separated by
-     * <code>glue</code>, rounded to the
+     * @return A string containing the objects of <code>data</code> separated by <code>glue</code>, rounded to the
      * <code>dec</code><sup>th</sup> decimale place
      */
     public static String join(float[] data, String glue) {
@@ -418,9 +405,7 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data
      * @param glue
-     * @return A string containing the objects of
-     * <code>data</code> separated by
-     * <code>glue</code>
+     * @return A string containing the objects of <code>data</code> separated by <code>glue</code>
      */
     public static String join(double[] data, String glue) {
         StringBuilder sb = new StringBuilder(data.length * 2);
@@ -434,8 +419,7 @@ public class Arrays2 {
     }
 
     /**
-     * Join array of objects by using a glue string and the Object's toString
-     * methods.
+     * Join array of objects by using a glue string and the Object's toString methods.
      *
      * @param data
      * @param glue
@@ -464,10 +448,9 @@ public class Arrays2 {
 
     /**
      * @param data
-     * @return squared length of array @todo Remove as it is not really a thin
-     * of arrays but of vectors
-     * @deprecated as the semantic is not clear: vector length, componentwise
-     * sum, etc
+     * @return squared length of array
+     * @todo Remove as it is not really a thin of arrays but of vectors
+     * @deprecated as the semantic is not clear: vector length, componentwise sum, etc
      */
     public static double lengthSquared(double[] data) {
         double l = 0;
@@ -480,10 +463,9 @@ public class Arrays2 {
     /**
      * @see #lengthSquared(double[])
      * @param data
-     * @return squarerooted length @todo Remove as it is not really a thin of
-     * arrays but of vectors
-     * @deprecated as the semantic is not clear: vector length, componentwise
-     * sum, etc
+     * @return squarerooted length
+     * @todo Remove as it is not really a thin of arrays but of vectors
+     * @deprecated as the semantic is not clear: vector length, componentwise sum, etc
      */
     public static double length(double[] data) {
         return Math.sqrt(lengthSquared(data));
@@ -560,8 +542,7 @@ public class Arrays2 {
     }
 
     /**
-     * divide an int array by a given value and write the result into a double
-     * array: target[i] = 1d * data[i] / factor;
+     * divide an int array by a given value and write the result into a double array: target[i] = 1d * data[i] / factor;
      *
      * @param data source array
      * @param factor
@@ -934,15 +915,14 @@ public class Arrays2 {
     }
 
     /**
-     * Normalizes the values of an array by mutliplying each value with
-     * 1/length(array). Length is the euclidean length.
+     * Normalizes the values of an array by mutliplying each value with 1/length(array). Length is the euclidean length.
      *
      * BE AWARE that the euclidean length is the dot product with itself!
      *
      * @param data normalized array or array of NaNs if length was zero
      * @see #length(double[])
-     * @see #mul(double[], double) @todo Remove as it is not really a thin of
-     * arrays but of vectors
+     * @see #mul(double[], double)
+     * @todo Remove as it is not really a thin of arrays but of vectors
      * @deprecated normalize according to what?
      */
     public static void normalize(double[] data) {
@@ -1147,8 +1127,7 @@ public class Arrays2 {
      * Computes the median of an array which is already sorted.
      *
      * @param a A <em>sorted</em> array.
-     * @return The median value of the sorted array
-     * <code>a</code>.
+     * @return The median value of the sorted array <code>a</code>.
      * @deprecated Replaced by {@link Statistics#median(double[])}
      * @see Statistics#median(double[])
      */
@@ -1182,13 +1161,11 @@ public class Arrays2 {
     }
 
     /**
-     * Find and return the index with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Find and return the index with the greatest value. If there are >1 maxima with the same value, only the first
+     * index will be returned. NaN entries will be ignored.
      *
      * @param a
-     * @return max array index of max value or -1 if array is empty or filled
-     * with NaNs
+     * @return max array index of max value or -1 if array is empty or filled with NaNs
      */
     public static int max(double[] a) {
         double max = -Double.MAX_VALUE;
@@ -1230,8 +1207,8 @@ public class Arrays2 {
     }
 
     /**
-     * Find and return the INDEX with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned.
+     * Find and return the INDEX with the greatest value. If there are >1 maxima with the same value, only the first
+     * index will be returned.
      *
      * @param a
      * @return max array index of max value or -1 if array is empty
@@ -1250,8 +1227,8 @@ public class Arrays2 {
     }
 
     /**
-     * Find and return the INDEX with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned.
+     * Find and return the INDEX with the greatest value. If there are >1 maxima with the same value, only the first
+     * index will be returned.
      *
      * @param a
      * @return max array index of max value or -1 if array is empty
@@ -1270,13 +1247,11 @@ public class Arrays2 {
     }
 
     /**
-     * Find and return the index with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Find and return the index with the greatest value. If there are >1 maxima with the same value, only the first
+     * index will be returned. NaN entries will be ignored.
      *
      * @param a
-     * @return max array index of max value or -1 if array is empty or filled
-     * with NaNs
+     * @return max array index of max value or -1 if array is empty or filled with NaNs
      */
     public static int max(float[] a) {
         float max = Float.MIN_VALUE;
@@ -1292,13 +1267,11 @@ public class Arrays2 {
     }
 
     /**
-     * Finds and returns the INDEX with the least value. If there are >1 minima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Finds and returns the INDEX with the least value. If there are >1 minima with the same value, only the first
+     * index will be returned. NaN entries will be ignored.
      *
      * @param a
-     * @return min array index of min value or -1 if array is empty or filled
-     * with NaNs
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
      */
     public static int min(byte[] a) {
         byte min = Byte.MAX_VALUE;
@@ -1314,13 +1287,11 @@ public class Arrays2 {
     }
 
     /**
-     * Finds and returns the INDEX with the least value. If there are >1 minima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Finds and returns the INDEX with the least value. If there are >1 minima with the same value, only the first
+     * index will be returned. NaN entries will be ignored.
      *
      * @param a
-     * @return min array index of min value or -1 if array is empty or filled
-     * with NaNs
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
      */
     public static int min(double[] a) {
         double min = Double.MAX_VALUE;
@@ -1362,13 +1333,11 @@ public class Arrays2 {
     }
 
     /**
-     * Finds and returns the index with the least value. If there are >1 minima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Finds and returns the index with the least value. If there are >1 minima with the same value, only the first
+     * index will be returned. NaN entries will be ignored.
      *
      * @param a
-     * @return min array index of min value or -1 if array is empty or filled
-     * with NaNs
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
      */
     public static int min(int[] a) {
         double min = Double.MAX_VALUE;
@@ -1384,13 +1353,11 @@ public class Arrays2 {
     }
 
     /**
-     * Finds and returns the index with the least value. If there are >1 minima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Finds and returns the index with the least value. If there are >1 minima with the same value, only the first
+     * index will be returned. NaN entries will be ignored.
      *
      * @param a
-     * @return min array index of min value or -1 if array is empty or filled
-     * with NaNs
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
      */
     public static int min(float[] a) {
         double min = Float.MAX_VALUE;
@@ -1471,14 +1438,19 @@ public class Arrays2 {
         return dst;
     }
 
+    public static double[] convertToDouble(short[] in) {
+        double[] dst = new double[in.length];
+        for (int i = 0; i < dst.length; i++) {
+            dst[i] = in[i];
+        }
+        return dst;
+    }
+
     /**
-     * Convert string array to doubles - replaces all non numerics with a NaN
-     * and throws a warning message to the logger
+     * Convert string array to doubles - replaces all non numerics with a NaN and throws a warning message to the logger
      *
      * @param src
-     * @return a
-     * <code>double[]</code> for each entry in
-     * <code>src</code>
+     * @return a <code>double[]</code> for each entry in <code>src</code>
      */
     public static double[] convertToDouble(String[] src) {
         return convertToDouble(src, new double[src.length]);
@@ -1530,13 +1502,10 @@ public class Arrays2 {
     }
 
     /**
-     * Convert string array to doubles - replaces all non numerics with a NaN
-     * and throws a warning message to the logger
+     * Convert string array to doubles - replaces all non numerics with a NaN and throws a warning message to the logger
      *
      * @param src
-     * @return a
-     * <code>double[]</code> for each entry in
-     * <code>src</code>
+     * @return a <code>double[]</code> for each entry in <code>src</code>
      */
     public static float[] convertToFloat(String[] src) {
         return convertToFloat(src, new float[src.length]);
@@ -1588,13 +1557,10 @@ public class Arrays2 {
     }
 
     /**
-     * Convert string array to doubles - replaces all non numerics with a 0 and
-     * throws a warning message to the logger
+     * Convert string array to doubles - replaces all non numerics with a 0 and throws a warning message to the logger
      *
      * @param src
-     * @return a
-     * <code>double[]</code> for each entry in
-     * <code>src</code>
+     * @return a <code>double[]</code> for each entry in <code>src</code>
      */
     public static int[] convertToInt(String[] src) {
         return convertToInt(src, new int[src.length]);
