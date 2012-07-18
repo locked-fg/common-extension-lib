@@ -11,6 +11,9 @@
     <description>Builds, tests, and runs the project Utilities.</description>
     <import file="nbproject/build-impl.xml"/>
     <property name="version" value="1.0.1" />
+    <tstamp><format property='build.time' pattern='yyyyMMdd-HHmmss'/></tstamp>
+
+
     <!--
 
     There exist several targets which are by default empty and which can be 
@@ -79,6 +82,7 @@
     </target>
 
     <target name="-post-jar" depends="-javadoc-build">
+        <copyfile src="${dist.jar}" dest="${dist.dir}/${application.title}-${build.time}.jar"/>
         <delete dir="${release.dir}" />
         <mkdir dir="${release.dir}" />
         <zip destfile="${release.dir}/${application.title}_${version}-api.zip"
