@@ -7,10 +7,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 /**
- * Class used to count the amount of certain objects.
- * For example:
- * put(Foo) -> 1
- * but(Foo) -> 2
+ * Class used to count the amount of certain objects. For example: put(Foo) -> 1 but(Foo) -> 2
  *
  * @author graf
  * @param <T>
@@ -27,15 +24,28 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
             add(t);
         }
     }
+
     /**
-     * Initialize the countmap with the content of another count map.
-     * The content of 'other' is copied over to this.
-     * 
-     * @param other 
+     * Initialize the countmap with the content of another count map. The content of 'other' is copied over to this.
+     *
+     * @param other
      */
     public CountMap(CountMap<? extends T> other) {
         for (Entry<? extends T, Integer> entry : other) {
             map.put(entry.getKey(), entry.getValue());
+        }
+    }
+
+    /**
+     * Adds a complete keymap to this key map.
+     *
+     * @param other Keymap whose elements will be added
+     */
+    public void add(CountMap<T> other) {
+        Iterator<Entry<T, Integer>> it = other.iterator();
+        while (it.hasNext()) {
+            Entry<T, Integer> e = it.next();
+            add(e.getKey(), e.getValue());
         }
     }
 
@@ -51,7 +61,7 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
 
     /**
      * increase the counter of the map by 'inc'.
-     * 
+     *
      * @param t
      * @param inc
      * @return new amount
@@ -87,6 +97,7 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
 
     /**
      * returns the sum of all values - NOT the size of the map!
+     *
      * @return
      */
     public int getSum() {
