@@ -153,29 +153,10 @@ public class Arrays2 {
             if (uniques[i] == uniques[i + 1]) {
                 last--;
                 System.arraycopy(uniques, i + 1, uniques, i, last - i);
-                // uniques[last] = Double.NaN;
                 i--; // recheck this position
             }
         }
         return Arrays.copyOf(uniques, last);
-        // int lastIndex = 0;
-        //
-        // if (arr.length > 500) {
-        // log.fine("array unique is currently quite inefficient! this can be a bottleneck");
-        // }
-        // for (double d : arr) {
-        // boolean found = false;
-        // for (int j = 0; j < lastIndex; j++) {
-        // if (uniques[j] == d) {
-        // found = true;
-        // break;
-        // }
-        // }
-        // if (!found) {
-        // uniques[lastIndex++] = d;
-        // }
-        // }
-        // return Arrays.copyOf(uniques, lastIndex);
     }
 
     public static int[] unique(int[] arr) {
@@ -186,31 +167,10 @@ public class Arrays2 {
             if (uniques[i] == uniques[i + 1]) {
                 last--;
                 System.arraycopy(uniques, i + 1, uniques, i, last - i);
-                // uniques[last] = Double.NaN;
                 i--; // recheck this position
             }
         }
         return Arrays.copyOf(uniques, last);
-        //
-        // int[] uniques = new int[arr.length];
-        // int lastIndex = 0;
-        //
-        // if (arr.length > 500) {
-        // log.fine("array unique is currently quite inefficient! this can be a bottleneck");
-        // }
-        // for (int d : arr) {
-        // boolean found = false;
-        // for (int j = 0; j < lastIndex; j++) {
-        // if (uniques[j] == d) {
-        // found = true;
-        // break;
-        // }
-        // }
-        // if (!found) {
-        // uniques[lastIndex++] = d;
-        // }
-        // }
-        // return Arrays.copyOf(uniques, lastIndex);
     }
 
     /**
@@ -228,27 +188,17 @@ public class Arrays2 {
                     + accuracy);
         }
 
-        double[] uniques = new double[arr.length];
-        int lastIndex = 0;
-
-        /**
-         * TODO quite inefficient! as it uses quadratic runtime! better: sort and check subsequent elements
-         */
-        if (arr.length > 500) {
-            log.fine("array unique is currently quite inefficient! this can be a bottleneck");
-        }
-        for (double d : arr) {
-            boolean found = false;
-            for (int j = 0; j < lastIndex && !found; j++) {
-                if (Math.abs(uniques[j] - d) < accuracy) {
-                    found = true;
-                }
-            }
-            if (!found) {
-                uniques[lastIndex++] = d;
+        double[] uniques = arr.clone();
+        Arrays.sort(uniques);
+        int last = arr.length;
+        for (int i = 0; i + 1 < last; i++) {
+            if (Math.abs(uniques[i] - uniques[i + 1]) < accuracy) {
+                last--;
+                System.arraycopy(uniques, i + 1, uniques, i, last - i);
+                i--; // recheck this position
             }
         }
-        return Arrays.copyOf(uniques, lastIndex);
+        return Arrays.copyOf(uniques, last);
     }
 
     /**
