@@ -23,4 +23,20 @@ public class LpNorm extends DistanceAdapter {
         }
         return Math2.pow(sum, 1d / p);
     }
+
+    public static class L1Norm extends DistanceAdapter {
+
+        @Override
+        public double dist(double[] a, double[] b) {
+            double sum = 0;
+            for (int i = 0; i < b.length; i++) {
+                sum += Math.abs(a[i] - b[i]);
+            }
+            return sum;
+
+        }
+    }
+
+    public static class L2Norm extends Euclidean {
+    }
 }
