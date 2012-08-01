@@ -1,14 +1,10 @@
 package de.lmu.ifi.dbs.utilities;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Collections2 {
+
+    private static final int REVERSE_THRESHOLD = 18; // Collections
 
     /**
      * returns a random sample from the input list
@@ -323,5 +319,24 @@ public class Collections2 {
             ib = b.get(i).intValue();
             a.set(i, (T) Integer.valueOf(ia + ib));
         }
+    }
+
+    public static <T> T last(List<T> list) {
+        return list.get(list.size() - 1);
+    }
+
+    public static <T> T last(Collection<T> collection) {
+        int size = collection.size();
+        T last = null;
+
+        // logic copied from Collections.reverse
+        if (size < REVERSE_THRESHOLD || collection instanceof RandomAccess) {
+            last = ((List<T>) collection).get(size - 1);
+        } else {
+            for (T tmp : collection) {
+                last = tmp;
+            }
+        }
+        return last;
     }
 }
