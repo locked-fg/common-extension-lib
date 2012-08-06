@@ -339,4 +339,37 @@ public class Collections2 {
         }
         return last;
     }
+
+    /**
+     * Gets the specific indexed element.
+     *
+     * In contrast to regular get() methods, this methods also supports negative numbers to index from the end of the
+     * list like -1 (last element), -2 last but one
+     *
+     * @param <T>
+     * @param collection
+     * @param i
+     * @return the element at the specified position (negative numbers indicate indexing from last element)
+     */
+    public static <T> T get(Collection<T> collection, int i) {
+        int size = collection.size();
+        if (i < 0) {
+            i = size + i;
+        }
+        T last = null;
+
+        // logic copied from Collections.reverse
+        if (size < REVERSE_THRESHOLD || collection instanceof RandomAccess) {
+            last = ((List<T>) collection).get(i);
+        } else {
+            int j = 0;
+            for (T tmp : collection) {
+                if (i == j++) {
+                    last = tmp;
+                    break;
+                }
+            }
+        }
+        return last;
+    }
 }

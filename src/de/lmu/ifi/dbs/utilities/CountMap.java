@@ -37,6 +37,27 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
     }
 
     /**
+     * Adds all elements of this collection with a value of 1
+     *
+     * @param list
+     * @see #addAll(java.util.Collection, int)
+     */
+    public void addAll(Collection<T> list) {
+        addAll(list, 1);
+    }
+
+    /**
+     * Adds all elements of this collection with the given value
+     *
+     * @param list
+     */
+    public void addAll(Collection<T> list, int value) {
+        for (T t : list) {
+            add(t, value);
+        }
+    }
+
+    /**
      * Adds a complete keymap to this key map.
      *
      * @param other Keymap whose elements will be added
