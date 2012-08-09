@@ -11,6 +11,9 @@ import java.util.Set;
  *
  * @author graf
  * @param <T>
+ *
+ * @deprecated you probably want to use com.google.common.collect.Multiset instead
+ * @see com.google.common.collect.Multiset http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/Multiset.html
  */
 public class CountMap<T> implements Iterable<Entry<T, Integer>> {
 
