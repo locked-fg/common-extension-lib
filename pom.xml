@@ -32,9 +32,27 @@
     </developer>
   </developers>
   
+  <!--  TO BE REMOVED -->
+  <distributionManagement>
+        <!-- use the following if you're not using a snapshot version. -->
+    <repository>
+      <id>nexus</id>
+      <name>RepositoryProxy</name>
+      <url>http://metropolis:8081/nexus/content/repositories/thirdparty</url>
+    </repository>
+        <!-- use the following if you ARE using a snapshot version. -->
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>RepositoryProxy</name>
+      <url>http://metropolis:8081/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <!--  TO BE REMOVED -->
+  
   <properties>
   	<maven.compiler.source>1.7</maven.compiler.source>
   	<maven.compiler.target>1.7</maven.compiler.target>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
   <build>
@@ -62,6 +80,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
+        <version>2.2.1</version>
           <executions>
             <execution>
               <id>attach-sources</id>
@@ -76,11 +95,28 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
             <goals>
               <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <!-- Sign jars with pgp -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
             </goals>
           </execution>
         </executions>
