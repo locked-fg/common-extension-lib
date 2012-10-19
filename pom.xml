@@ -4,8 +4,34 @@
   <artifactId>commons-extension-lib</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Commons Extension Lib</name>
+  <url>http://code.google.com/p/common-extension-lib</url>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://opensource.org/licenses/BSD-3-Clause</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://code.google.com/p/common-extension-lib/</url>
+    <connection>https://code.google.com/p/common-extension-lib</connection>
+  </scm>
   
-  <url>http://code.google.com/p/common-extension-lib/</url>
+  <developers>
+    <developer>
+      <id>franz</id>
+      <name>Franz Graf</name>
+      <email>locked@gmail.com</email>
+    </developer>
+    <developer>
+      <id>muki</id>
+      <name>Nepomuk Seiler</name>
+      <email>nepomuk.seiler@gmail.com</email>
+    </developer>
+  </developers>
+  
   <properties>
   	<maven.compiler.source>1.7</maven.compiler.source>
   	<maven.compiler.target>1.7</maven.compiler.target>
@@ -30,6 +56,34 @@
        <source>${maven.compiler.source}</source> 
 		  <target>${maven.compiler.target}</target> 
         </configuration>
+      </plugin>
+      
+      <!-- Attached source.jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+      </plugin>
+        
+      <!-- Attached javadoc.jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
