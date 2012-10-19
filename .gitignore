@@ -5,3 +5,18 @@
 *.war
 *.ear
 /nbproject/private/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Netbeans
+build.xml
+nbproject/
+
+# Maven
+target/
+
+# Libraries
+lib/
