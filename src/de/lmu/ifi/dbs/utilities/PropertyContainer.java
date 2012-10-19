@@ -148,7 +148,8 @@ public class PropertyContainer {
     }
 
     /**
-     * Simple delegate to {@link #setProperty(java.lang.String, java.lang.String)}
+     * Simple delegate to
+     * {@link #setProperty(java.lang.String, java.lang.String)}
      */
     public String setString(String key, String value) {
         return setProperty(key, value);
@@ -183,6 +184,14 @@ public class PropertyContainer {
             return null;
         }
         return Double.parseDouble(value);
+    }
+
+    public Float getFloat(String key) {
+        String value = getProperty(key);
+        if (value == null) {
+            return null;
+        }
+        return Float.parseFloat(value);
     }
 
     public Double setProperty(String key, double i) {
