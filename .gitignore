@@ -20,3 +20,8 @@ target/
 
 # Libraries
 lib/
+
+# Build
+build/
+dist/
+release/

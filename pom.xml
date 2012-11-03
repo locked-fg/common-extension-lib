@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.lmu.ifi.dbs</groupId>
     <artifactId>commons-extension-lib</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Commons Extension Lib</name>
     <description>A set of handy classes used in several projects.</description>
@@ -19,7 +19,8 @@
 
     <scm>
         <url>https://code.google.com/p/common-extension-lib/</url>
-        <connection>https://code.google.com/p/common-extension-lib</connection>
+        <connection>scm:git:https://code.google.com/p/common-extension-lib</connection>
+        <developerConnection>scm:git:https://code.google.com/p/common-extension-lib</developerConnection>
     </scm>
 
     <developers>
@@ -34,6 +35,12 @@
             <email>nepomuk.seiler@gmail.com</email>
         </developer>
     </developers>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
 
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
@@ -107,7 +114,7 @@
                         </goals>
                     </execution>
                 </executions>
-                <!-- trigger with -DskipSigning=false for pgp signing -->
+                <!--trigger with -DskipSigning=false for pgp signing--> 
                 <configuration>
                     <skip>${skipSigning}</skip>
                 </configuration>
@@ -143,4 +150,34 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.1</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
