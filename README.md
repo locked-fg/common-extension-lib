@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/muuki88/common-extension-lib.png)](http://travis-ci.org/muuki88/common-extension-lib)
+
 # common-extension-lib
 
 Just some classes that I use very frequently in most of my projects
