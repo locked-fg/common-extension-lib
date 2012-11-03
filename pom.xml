@@ -4,7 +4,9 @@
     <groupId>de.lmu.ifi.dbs</groupId>
     <artifactId>commons-extension-lib</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
     <name>Commons Extension Lib</name>
+    <description>A set of handy classes used in several projects.</description>
     <url>http://code.google.com/p/common-extension-lib</url>
 
     <licenses>
