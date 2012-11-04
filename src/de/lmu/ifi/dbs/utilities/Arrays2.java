@@ -190,15 +190,15 @@ public class Arrays2 {
 
         double[] uniques = arr.clone();
         Arrays.sort(uniques);
-        int last = arr.length;
-        for (int i = 0; i + 1 < last; i++) {
+        int length = arr.length;
+        for (int i = 0; i + 1 < length; i++) {
             if (Math.abs(uniques[i] - uniques[i + 1]) < accuracy) {
-                last--;
-                System.arraycopy(uniques, i + 1, uniques, i, last - i);
+                length--;
+                System.arraycopy(uniques, i + 2, uniques, i+1, length - i-1);
                 i--; // recheck this position
             }
         }
-        return Arrays.copyOf(uniques, last);
+        return Arrays.copyOf(uniques, length);
     }
 
     /**
