@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.lmu.ifi.dbs</groupId>
-    <artifactId>commons-extension-lib</artifactId>
+    <artifactId>common-extension-lib</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Commons Extension Lib</name>
+    <name>Common Extension Lib</name>
     <description>A set of handy classes used in several projects.</description>
     <url>http://code.google.com/p/common-extension-lib</url>
 
@@ -49,36 +49,36 @@
         <skipSigning>true</skipSigning>
     </properties>
 
-	<build>
+    <build>
         <!-- Special build due to non-maven directory hierarchy -->
-		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>test</testSourceDirectory>
-		<resources>
-			<resource>
-				<directory>src</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</resource>
-		</resources>
+        <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>test</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
     
-		<plugins>
+        <plugins>
             <!-- Compiler plugin -->
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<source>${maven.compiler.source}</source>
-					<target>${maven.compiler.target}</target>
-				</configuration>
-			</plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
            
-			<!-- OSGi bundle Manifest header -->
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<version>2.3.7</version>
-				<extensions>true</extensions>
+            <!-- OSGi bundle Manifest header -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.7</version>
+                <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
@@ -86,7 +86,7 @@
                         <Export-Package>de.lmu.ifi.dbs.utilities.*;version=${project.version}</Export-Package>
                     </instructions>
                 </configuration>
-			</plugin>
+            </plugin>
 
             <!-- Attached source.jar -->
             <plugin>
