@@ -71,10 +71,10 @@ public class Collections2 {
         }
         // sampling = 0, nothing
         if (size == 0) {
-            return new ArrayList<>(0);
+            return new ArrayList<T>(0);
         }
         // sampling = 100% -> all
-        ArrayList<T> out = new ArrayList<>(in);
+        ArrayList<T> out = new ArrayList<T>(in);
         if (size == in.size()) {
             return out;
         }
@@ -96,7 +96,7 @@ public class Collections2 {
      * @return list with unique elements from src
      */
     public static <T> List<T> unique(Collection<T> src) {
-        List<T> dst = new ArrayList<>(src.size());
+        List<T> dst = new ArrayList<T>(src.size());
         for (T elem : src) {
             if (!dst.contains(elem)) {
                 dst.add(elem);

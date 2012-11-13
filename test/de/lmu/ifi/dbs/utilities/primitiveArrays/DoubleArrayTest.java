@@ -21,7 +21,7 @@ public class DoubleArrayTest {
         doubleArray.add(0);
         doubleArray.add(1);
         
-        List<Double> l = new ArrayList<>();
+        List<Double> l = new ArrayList<Double>();
         l.add(2d);
         l.add(3d);
         

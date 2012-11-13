@@ -17,7 +17,7 @@ import java.util.Set;
  */
 public class CountMap<T> implements Iterable<Entry<T, Integer>> {
 
-    private final HashMap<T, Integer> map = new HashMap<>();
+    private final HashMap<T, Integer> map = new HashMap<T, Integer>();
 
     public CountMap() {
     }
