@@ -50,18 +50,6 @@
     </properties>
 
     <build>
-        <!-- Special build due to non-maven directory hierarchy -->
-        <sourceDirectory>src</sourceDirectory>
-        <testSourceDirectory>test</testSourceDirectory>
-        <resources>
-            <resource>
-                <directory>src</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-        </resources>
-    
         <plugins>
             <!-- Compiler plugin -->
             <plugin>
