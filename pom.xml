@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.lmu.ifi.dbs.utilities</groupId>
     <artifactId>common-extension-lib</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
     <name>Common Extension Lib</name>
     <description>A set of handy classes used in several projects.</description>
@@ -43,10 +43,10 @@
     </parent>
 
     <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <skipSigning>false</skipSigning>
+        <skipSigning>true</skipSigning>
     </properties>
 
     <build>
