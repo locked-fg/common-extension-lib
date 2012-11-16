@@ -36,7 +36,7 @@ public class PropertyContainer {
     }
 
     /**
-     * uses the specified file as onfig file
+     * uses the specified file as config file
      *
      * @param file
      */
@@ -45,7 +45,14 @@ public class PropertyContainer {
             throw new NullPointerException("Filename mustn't be null");
         }
         this.configfile = file;
-        this.initialize();
+        InputStream in = new BufferedInputStream(new FileInputStream(configfile));
+        properties.load(in);
+        in.close();
+    }
+
+    public PropertyContainer(InputStream stream) throws IOException {
+        properties.load(stream);
+        this.configfile = null;
     }
 
     /**
@@ -57,26 +64,7 @@ public class PropertyContainer {
      * @throws IOException
      */
     public PropertyContainer(File dir, String filename) throws IOException {
-        if (filename == null) {
-            throw new NullPointerException("Filename ain't be null");
-        }
-        if (dir == null) {
-            throw new NullPointerException("Directory must not be null");
-        }
-
-        // check directory
-        if (!dir.exists() && !dir.mkdirs()) {
-            throw new IOException("could not create config dir: " + dir.toString());
-        }
-
-        this.configfile = new File(dir, filename);
-        this.initialize();
-    }
-
-    private void initialize() throws IOException {
-        InputStream in = new BufferedInputStream(new FileInputStream(configfile));
-        properties.load(in);
-        in.close();
+        this(new File(dir, filename));
     }
 
     /**
@@ -105,7 +93,7 @@ public class PropertyContainer {
         for (Object keyObject : l) {
             String key = (String) keyObject;
             String val = (String) properties.get(key);
-            sb.append(key + splitSeparator + val + "\n");
+            sb.append(key).append(splitSeparator).append(val).append("\n");
         }
         return sb.toString();
     }
@@ -119,13 +107,17 @@ public class PropertyContainer {
     }
 
     public synchronized void save() throws IOException {
-        if (!configfile.exists()) {
-            configfile.getParentFile().mkdirs();
-            configfile.createNewFile();
+        if (configfile == null) {
+            throw new IllegalStateException("cannot save a property file with value null");
+        } else {
+            if (!configfile.exists()) {
+                configfile.getParentFile().mkdirs();
+                configfile.createNewFile();
+            }
+            OutputStream out = new BufferedOutputStream(new FileOutputStream(configfile));
+            properties.store(out, comment);
+            out.close();
         }
-        OutputStream out = new BufferedOutputStream(new FileOutputStream(configfile));
-        properties.store(out, comment);
-        out.close();
     }
 
     public void removeProperty(String key) {
