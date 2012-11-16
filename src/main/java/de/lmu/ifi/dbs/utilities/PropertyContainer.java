@@ -24,7 +24,7 @@ import java.util.Collections;
  */
 public class PropertyContainer {
 
-    protected static final Logger log = Logger.getLogger(PropertyContainer.class.getName());
+    private static final Logger log = Logger.getLogger(PropertyContainer.class.getName());
     protected final Properties properties = new Properties();
     protected final String SEPARATOR = ";";
     protected final File configfile;
