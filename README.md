@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/muuki88/common-extension-lib.png)](http://travis-ci.org/muuki88/common-extension-lib)
+[![Build Status](https://secure.travis-ci.org/locked-fg/common-extension-lib.png?branch=master)](https://travis-ci.org/locked-fg/common-extension-lib)
 
 # common-extension-lib
 
