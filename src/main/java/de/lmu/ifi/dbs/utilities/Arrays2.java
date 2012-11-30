@@ -1,5 +1,6 @@
 package de.lmu.ifi.dbs.utilities;
 
+import java.text.Format;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
@@ -222,7 +223,18 @@ public class Arrays2 {
     public static String join(Object[] arr, Character glue) {
         return join(arr, glue.toString());
     }
-
+    
+    public static String join(long[] arr, String glue, Format f) {
+        StringBuilder buf = new StringBuilder(arr.length * 5);
+        for (int i = 0; i < arr.length; i++) {
+            buf.append(f.format(arr[i]));
+            if (i < arr.length - 1) {
+                buf.append(glue);
+            }
+        }
+        return buf.toString();
+    }
+    
     public static String join(long[] arr, String glue) {
         StringBuilder buf = new StringBuilder(arr.length * 5);
         for (int i = 0; i < arr.length; i++) {
