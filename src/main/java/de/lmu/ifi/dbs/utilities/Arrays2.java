@@ -195,7 +195,7 @@ public class Arrays2 {
         for (int i = 0; i + 1 < length; i++) {
             if (Math.abs(uniques[i] - uniques[i + 1]) < accuracy) {
                 length--;
-                System.arraycopy(uniques, i + 2, uniques, i+1, length - i-1);
+                System.arraycopy(uniques, i + 2, uniques, i + 1, length - i - 1);
                 i--; // recheck this position
             }
         }
@@ -220,10 +220,29 @@ public class Arrays2 {
         return buf.toString();
     }
 
+    /**
+     * join array of objects by using a glue string and a formatter object
+     *
+     * @param arr
+     * @param glue
+     * @param f
+     * @return string of joined toString values
+     */
+    public static String join(Object[] arr, String glue, Format f) {
+        StringBuilder buf = new StringBuilder(arr.length * 2);
+        for (int i = 0; i < arr.length; i++) {
+            buf.append(f.format(arr[i]));
+            if (i < arr.length - 1) {
+                buf.append(glue);
+            }
+        }
+        return buf.toString();
+    }
+
     public static String join(Object[] arr, Character glue) {
         return join(arr, glue.toString());
     }
-    
+
     public static String join(long[] arr, String glue, Format f) {
         StringBuilder buf = new StringBuilder(arr.length * 5);
         for (int i = 0; i < arr.length; i++) {
@@ -234,7 +253,7 @@ public class Arrays2 {
         }
         return buf.toString();
     }
-    
+
     public static String join(long[] arr, String glue) {
         StringBuilder buf = new StringBuilder(arr.length * 5);
         for (int i = 0; i < arr.length; i++) {
