@@ -12,12 +12,13 @@ import java.util.Set;
  * @author graf
  * @param <T>
  *
- * @deprecated you probably want to use com.google.common.collect.Multiset instead
- * @see com.google.common.collect.Multiset http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/Multiset.html
+ * You probably want to use com.google.common.collect.Multiset instead if you only need integer counts
+ * @see com.google.common.collect.Multiset
+ * http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/Multiset.html
  */
-public class CountMap<T> implements Iterable<Entry<T, Integer>> {
+public class CountMap<T> implements Iterable<Entry<T, Double>> {
 
-    private final HashMap<T, Integer> map = new HashMap<T, Integer>();
+    private final HashMap<T, Double> map = new HashMap<T, Double>();
 
     public CountMap() {
     }
@@ -34,7 +35,7 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
      * @param other
      */
     public CountMap(CountMap<? extends T> other) {
-        for (Entry<? extends T, Integer> entry : other) {
+        for (Entry<? extends T, Double> entry : other) {
             map.put(entry.getKey(), entry.getValue());
         }
     }
@@ -53,8 +54,9 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
      * Adds all elements of this collection with the given value
      *
      * @param list
+     * @param value
      */
-    public void addAll(Collection<T> list, int value) {
+    public void addAll(Collection<T> list, double value) {
         for (T t : list) {
             add(t, value);
         }
@@ -66,9 +68,9 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
      * @param other Keymap whose elements will be added
      */
     public void add(CountMap<T> other) {
-        Iterator<Entry<T, Integer>> it = other.iterator();
+        Iterator<Entry<T, Double>> it = other.iterator();
         while (it.hasNext()) {
-            Entry<T, Integer> e = it.next();
+            Entry<T, Double> e = it.next();
             add(e.getKey(), e.getValue());
         }
     }
@@ -77,9 +79,9 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
      * adds T to the map and returns the number of occurences that are now logged
      *
      * @param t
-     * @return number of times 't' was put into the map until now
+     * @return new value for t
      */
-    public Integer add(T t) {
+    public Double add(T t) {
         return add(t, 1);
     }
 
@@ -90,28 +92,32 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
      * @param inc
      * @return new amount
      */
-    public Integer add(T t, int inc) {
-        Integer i = map.get(t);
-        if (i == null) {
-            i = inc;
-        } else {
-            i = i + inc;
-        }
-
+    public Double add(T t, double inc) {
+        Double i = get(t) + inc;
         map.put(t, i);
         return i;
     }
 
     @Override
-    public Iterator<Entry<T, Integer>> iterator() {
+    public Iterator<Entry<T, Double>> iterator() {
         return map.entrySet().iterator();
     }
 
-    public Integer get(T label) {
-        return map.get(label);
+    /**
+     * Returns the current value for the given label. If the label was never added before, 0 is returned.
+     *
+     * @param label
+     * @return
+     */
+    public Double get(T label) {
+        Double value = map.get(label);
+        if (value == null) {
+            value = 0d;
+        }
+        return value;
     }
 
-    public Collection<Integer> values() {
+    public Collection<Double> values() {
         return map.values();
     }
 
@@ -124,12 +130,8 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
      *
      * @return
      */
-    public int getSum() {
-        int sum = 0;
-        for (Integer value : map.values()) {
-            sum += value;
-        }
-        return sum;
+    public double getSum() {
+        return Collections2.sum(map.values());
     }
 
     public int size() {
@@ -139,7 +141,7 @@ public class CountMap<T> implements Iterable<Entry<T, Integer>> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("CountMap: ");
-        for (Entry<T, Integer> e : map.entrySet()) {
+        for (Entry<T, Double> e : map.entrySet()) {
             sb.append("[");
             sb.append(e.getKey());
             sb.append("=");
