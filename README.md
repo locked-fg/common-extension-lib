@@ -17,5 +17,6 @@ Just some classes that I use very frequently in most of my projects
 
 # History
 
+1.2.0: Improved CountMap (supports double values)
 1.1.0: Java 6 Compatibility
 1.0.0: maven release
