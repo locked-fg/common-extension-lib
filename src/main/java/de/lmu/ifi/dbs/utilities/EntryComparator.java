@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.Map.Entry;
 
 /**
- * Class that probides Key and Value comparators for {@link Entry}-objects.
+ * Class that provides Key and Value comparators for {@link Entry}-objects.
  * 
  * @author graf
  */
