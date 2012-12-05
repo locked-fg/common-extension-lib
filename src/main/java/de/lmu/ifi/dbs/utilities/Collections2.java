@@ -275,7 +275,7 @@ public class Collections2 {
         return sum;
     }
 
-    public static <T> String join(final Collection<T> c, final ToStringFormatter<T> f, final String glue) {
+    public static <T> String join(final Collection<T> c, final Formatter<T> f, final String glue) {
         StringBuilder sb = new StringBuilder();
         final int size = c.size();
         int i = 0;

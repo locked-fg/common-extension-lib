@@ -123,7 +123,7 @@ public class Collections2Test {
         Collection<Integer> list = new ArrayList<Integer>();
         list.add(1);
         list.add(2);
-        ToStringFormatter<Integer> f = new ToStringFormatter<Integer>();
+        Formatter<Integer> f = new Formatter<Integer>();
 
         String result = Collections2.join(list, f, "|");
         String expected = "1|2";

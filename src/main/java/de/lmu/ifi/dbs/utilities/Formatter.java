@@ -4,7 +4,7 @@ package de.lmu.ifi.dbs.utilities;
  * Class for overriding an object's toString method.
  * @author Franz
  */
-public class ToStringFormatter<T> {
+public class Formatter<T> {
 
     /**
      * converts the given Object into a string.
