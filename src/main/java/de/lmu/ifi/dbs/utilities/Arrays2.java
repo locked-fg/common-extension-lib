@@ -428,31 +428,6 @@ public class Arrays2 {
     }
 
     /**
-     * @param data
-     * @return squared length of array
-     * @todo Remove as it is not really a thin of arrays but of vectors
-     * @deprecated as the semantic is not clear: vector length, componentwise sum, etc
-     */
-    public static double lengthSquared(double[] data) {
-        double l = 0;
-        for (double d : data) {
-            l += d * d;
-        }
-        return l;
-    }
-
-    /**
-     * @see #lengthSquared(double[])
-     * @param data
-     * @return squarerooted length
-     * @todo Remove as it is not really a thin of arrays but of vectors
-     * @deprecated as the semantic is not clear: vector length, componentwise sum, etc
-     */
-    public static double length(double[] data) {
-        return Math.sqrt(lengthSquared(data));
-    }
-
-    /**
      * multilpy array with factor
      *
      * @param data source array
@@ -798,19 +773,6 @@ public class Arrays2 {
         return sum;
     }
 
-    /**
-     * Delegates to {@link #add(double[], double)}
-     *
-     * @param a
-     * @param b
-     * @Deprecated since April 2010
-     * @see #add(double[], double[])
-     */
-    @Deprecated
-    public static void sum(double[] a, double[] b) {
-        add(a, b);
-    }
-
     public static void sub(int[] a, double b) {
         add(a, -b);
     }
@@ -893,41 +855,6 @@ public class Arrays2 {
             out[i] = a[i] - b[i];
         }
         return out;
-    }
-
-    /**
-     * Normalizes the values of an array by mutliplying each value with 1/length(array). Length is the euclidean length.
-     *
-     * BE AWARE that the euclidean length is the dot product with itself!
-     *
-     * @param data normalized array or array of NaNs if length was zero
-     * @see #length(double[])
-     * @see #mul(double[], double)
-     * @todo Remove as it is not really a thin of arrays but of vectors
-     * @deprecated normalize according to what?
-     */
-    public static void normalize(double[] data) {
-        double length = length(data);
-        if (length == 0) {
-            log.log(Level.WARNING, "Attempting to normalize an array with zero length: {0}", join(data, " ", "%.5f"));
-            throw new ArithmeticException("upcoming division by zero");
-        }
-        div(data, length);
-    }
-
-    /**
-     * computes the dot product
-     *
-     * @param o1
-     * @param o2
-     * @return dot product
-     * @throws IllegalArgumentException if o1 and o2 have different dimensions
-     * @todo Remove as it is not really a thin of arrays but of vectors
-     * @deprecated
-     * @see Vectors#dot(double[], double[])
-     */
-    public static double dot(double[] o1, double[] o2) {
-        return Vectors.dot(o1, o2);
     }
 
     /**
@@ -1090,55 +1017,6 @@ public class Arrays2 {
         System.arraycopy(a, 0, c, 0, a.length);
         System.arraycopy(b, 0, c, a.length, b.length);
         return c;
-    }
-
-    /**
-     *
-     * @param a
-     * @return the statistical mean
-     * @deprecated
-     * @see Statistics#mean(double[])
-     */
-    @Deprecated
-    public static double average(double[] a) {
-        return Statistics.mean(a);
-    }
-
-    /**
-     * Computes the median of an array which is already sorted.
-     *
-     * @param a A <em>sorted</em> array.
-     * @return The median value of the sorted array <code>a</code>.
-     * @deprecated Replaced by {@link Statistics#median(double[])}
-     * @see Statistics#median(double[])
-     */
-    @Deprecated
-    public static double median(double[] a) {
-        return Statistics.median(a);
-    }
-
-    /**
-     *
-     * @param a
-     * @return
-     * @deprecated
-     * @see Statistics#var(double[])
-     */
-    @Deprecated
-    public static double var(double[] a) {
-        return Statistics.var(a);
-    }
-
-    /**
-     *
-     * @param a
-     * @return
-     * @deprecated
-     * @see Statistics#stdev(double[])
-     */
-    @Deprecated
-    public static double stdev(double[] a) {
-        return Statistics.stdev(a);
     }
 
     /**

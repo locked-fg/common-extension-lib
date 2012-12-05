@@ -8,7 +8,8 @@ public final class Vectors {
 
     /**
      * Normalizes the length of the vector.
-     * @param in 
+     *
+     * @param in
      */
     public static void normalize(double[] in) {
         Arrays2.div(in, length(in));
@@ -24,8 +25,7 @@ public final class Vectors {
      * @param o1
      * @param o2
      * @return dot product
-     * @throws IllegalArgumentException
-     *             if o1 and o2 have different dimensions
+     * @throws IllegalArgumentException if o1 and o2 have different dimensions
      */
     public static double dot(double[] o1, double[] o2) {
         double result = 0;

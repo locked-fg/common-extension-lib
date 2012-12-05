@@ -17,23 +17,7 @@ public class Arrays2Test {
     @AfterClass
     public static void tearDownClass() throws Exception {
     }
-    
-    @Test
-    public void testMedian() {
-        double[] d;
-        d = new double[]{1};
-        assertEquals(1, Arrays2.median(d), 0.0001);
-        
-        d = new double[]{1, 2, 3};
-        assertEquals(2, Arrays2.median(d), 0.0001);
-        
-        d = new double[]{1, 3};
-        assertEquals(2, Arrays2.median(d), 0.0001);
-        
-        d = new double[]{1, 2, 3, 4};
-        assertEquals(2.5, Arrays2.median(d), 0.0001);
-    }
-    
+
     @Test
     public void testUniqueDouble() {
         double[] in = {0d, 0d, 1, 2, 3, 2, 0, 0};
