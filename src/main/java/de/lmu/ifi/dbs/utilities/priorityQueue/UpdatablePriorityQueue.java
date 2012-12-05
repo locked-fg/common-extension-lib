@@ -1,5 +1,6 @@
-package de.lmu.ifi.dbs.utilities;
+package de.lmu.ifi.dbs.utilities.priorityQueue;
 
+import de.lmu.ifi.dbs.utilities.priorityQueue.MutablePriorityObject;
 import java.util.ArrayList;
 import java.util.TreeMap;
 

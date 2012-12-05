@@ -1,4 +1,4 @@
-package de.lmu.ifi.dbs.utilities;
+package de.lmu.ifi.dbs.utilities.priorityQueue;
 
 public interface MutablePriorityObject<T> extends PriorityObject<T> {
 

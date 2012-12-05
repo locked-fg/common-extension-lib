@@ -1,4 +1,4 @@
-package de.lmu.ifi.dbs.utilities;
+package de.lmu.ifi.dbs.utilities.priorityQueue;
 
 import java.util.ArrayList;
 import java.util.Arrays;

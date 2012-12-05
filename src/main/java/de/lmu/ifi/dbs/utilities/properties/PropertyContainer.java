@@ -1,5 +1,6 @@
-package de.lmu.ifi.dbs.utilities;
+package de.lmu.ifi.dbs.utilities.properties;
 
+import de.lmu.ifi.dbs.utilities.Arrays2;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;

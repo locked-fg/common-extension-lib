@@ -1,4 +1,6 @@
-package de.lmu.ifi.dbs.utilities;
+package de.lmu.ifi.dbs.utilities.priorityQueue;
+
+import de.lmu.ifi.dbs.utilities.priorityQueue.PriorityObject;
 
 /**
  * This pair type is used to store the objects together with their priority

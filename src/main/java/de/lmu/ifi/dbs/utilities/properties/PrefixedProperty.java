@@ -1,4 +1,4 @@
-package de.lmu.ifi.dbs.utilities;
+package de.lmu.ifi.dbs.utilities.properties;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

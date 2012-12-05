@@ -1,5 +1,5 @@
 
-package de.lmu.ifi.dbs.utilities;
+package de.lmu.ifi.dbs.utilities.priorityQueue;
 
 public abstract class PriorityObjectAdapter<T> implements MutablePriorityObject<T>{
     private final T value;

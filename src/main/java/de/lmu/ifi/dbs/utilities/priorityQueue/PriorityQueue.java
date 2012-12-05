@@ -1,4 +1,4 @@
-package de.lmu.ifi.dbs.utilities;
+package de.lmu.ifi.dbs.utilities.priorityQueue;
 
 /**
  * Implements a priority queue for objects.
