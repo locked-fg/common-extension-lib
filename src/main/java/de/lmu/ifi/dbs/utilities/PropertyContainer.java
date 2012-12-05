@@ -20,6 +20,9 @@ import java.util.logging.Logger;
 
 /**
  * Class for storing and fetching properties to/from a Properties-file.
+ * 
+ * https://github.com/typesafehub/config
+ * might be a better alternative!
  */
 public class PropertyContainer {
 
