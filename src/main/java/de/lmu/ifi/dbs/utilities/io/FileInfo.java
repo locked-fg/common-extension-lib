@@ -16,16 +16,16 @@ public class FileInfo {
 
         StringBuilder sb = new StringBuilder(150);
         sb.append(nl);
-        sb.append("File:     '" + f + "'" + nl);
-        sb.append("isNull:    " + (f == null) + nl);
+        sb.append("File:     '").append(f).append("'").append(nl);
+        sb.append("isNull:    ").append(f == null).append(nl);
         if (f != null) {
-            sb.append("isFile:    " + (f.isFile()) + nl);
-            sb.append("isDir:     " + (f.isDirectory()) + nl);
-            sb.append("exists:    " + (f.exists()) + nl);
-            sb.append("readable:  " + (f.canRead()) + nl);
-            sb.append("writeable: " + (f.canWrite()) + nl);
-            sb.append("exec:      " + (f.canExecute()) + nl);
-            sb.append("size:      " + (f.length()) + nl);
+            sb.append("isFile:    ").append(f.isFile()).append(nl);
+            sb.append("isDir:     ").append(f.isDirectory()).append(nl);
+            sb.append("exists:    ").append(f.exists()).append(nl);
+            sb.append("readable:  ").append(f.canRead()).append(nl);
+            sb.append("writeable: ").append(f.canWrite()).append(nl);
+            sb.append("exec:      ").append(f.canExecute()).append(nl);
+            sb.append("size:      ").append(f.length()).append(nl);
         }
         return sb.toString();
     }
