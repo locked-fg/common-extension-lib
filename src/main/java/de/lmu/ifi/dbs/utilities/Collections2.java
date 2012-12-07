@@ -1,5 +1,6 @@
 package de.lmu.ifi.dbs.utilities;
 
+import de.lmu.ifi.dbs.utilities.Formatter;
 import java.util.*;
 
 public class Collections2 {
@@ -252,6 +253,12 @@ public class Collections2 {
         return pos;
     }
 
+    /**
+     * calculates the sum of all values in the list
+     *
+     * @param list
+     * @return sum over all elements
+     */
     public static double sum(Collection<? extends Number> list) {
         double sum = 0;
         for (Number d : list) {
@@ -260,10 +267,22 @@ public class Collections2 {
         return sum;
     }
 
+    /**
+     * calculates the mean of all elements in the list
+     *
+     * @param list
+     * @return mean value
+     */
     public static double mean(Collection<? extends Number> list) {
         return sum(list) / list.size();
     }
 
+    /**
+     * calculates the variance of the elements in the list
+     *
+     * @param list
+     * @return variance
+     */
     public static double variance(Collection<? extends Number> list) {
         double mean = mean(list);
         double sum = 0;
@@ -321,10 +340,24 @@ public class Collections2 {
         }
     }
 
+    /**
+     * returns the last element of the list.
+     *
+     * @param <T>
+     * @param list
+     * @return
+     */
     public static <T> T last(List<T> list) {
         return list.get(list.size() - 1);
     }
 
+    /**
+     * returns the last element of the collection.
+     *
+     * @param <T>
+     * @param list
+     * @return
+     */
     public static <T> T last(Collection<T> collection) {
         int size = collection.size();
         T last = null;
