@@ -8,12 +8,23 @@ import java.awt.geom.Point2D;
 public class Math2 {
 
     /**
+     * performs a division a/b with a fallback if a/b would result in a division by zero.
+     *
+     * @param a
+     * @param b
+     * @param c fallback if b = 0
+     * @return a/b or c if b = 0;
+     */
+    public static double div(double a, double b, double c) {
+        return b != 0 ? a / b : c;
+    }
+
+    /**
      * Rotate a point around the origin
      *
      * @param x
      * @param y
-     * @param deg
-     *            in degrees
+     * @param deg in degrees
      * @return
      */
     public static Point2D rotate(int x, int y, double deg) {
@@ -154,23 +165,9 @@ public class Math2 {
     }
 
     /**
-     * Computes the cosine of <code>a</code> and <code>b</code> as
-     * <code>&lt;obj1,obj2&gt; / (||a|| ||b||)</code>
+     * Method that wraps {@link Math#pow(double, double)} and linearizes the calculation of the exponent up to power=64
+     * which was faster on my machine in all tests.
      *
-     * @param a
-     * @param b
-     * @return The cosine between <code>a</code> and <code>b</code>
-     */
-    @SuppressWarnings("deprecation")
-    public static double cosinus(double[] a, double[] b) {
-        return Vectors.cosinus(a, b);
-    }
-
-    /**
-     * Method that wraps {@link Math#pow(double, double)} and linearizes the
-     * calculation of the exponent up to power=64 which was faster on my machine
-     * in all tests.
-     * 
      * @param a
      * @param b
      * @return
