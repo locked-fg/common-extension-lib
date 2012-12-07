@@ -154,14 +154,23 @@ public class CountMap<T> implements Iterable<Entry<T, Double>> {
         return value;
     }
 
+    /**
+     * @return all values stored in the map
+     */
     public Collection<Double> values() {
         return map.values();
     }
 
+    /**
+     * @return set of keys that have been counted
+     */
     public Set<T> keySet() {
         return map.keySet();
     }
 
+    /**
+     * @return the entry set of the count map
+     */
     public Set<Entry<T, Double>> entrySet() {
         return map.entrySet();
     }
@@ -175,6 +184,11 @@ public class CountMap<T> implements Iterable<Entry<T, Double>> {
         return Collections2.sum(map.values());
     }
 
+    /**
+     * returns the amount of entries in the map
+     *
+     * @return
+     */
     public int size() {
         return map.size();
     }
