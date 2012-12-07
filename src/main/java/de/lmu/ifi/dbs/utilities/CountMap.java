@@ -98,6 +98,31 @@ public class CountMap<T> implements Iterable<Entry<T, Double>> {
         return i;
     }
 
+    /**
+     * Sets a specific value for this label, replacing any (posiibly) existing value
+     *
+     * @param t
+     * @param value
+     * @return
+     */
+    public Double set(T t, double value) {
+        Double prev = get(t);
+        map.put(t, value);
+        return prev;
+    }
+
+    /**
+     * Removes the entry from the map and returns the most recent associated value
+     *
+     * @param t
+     * @return the previously assigned value
+     */
+    public double remove(T t) {
+        double d = get(t);
+        map.remove(t);
+        return d;
+    }
+
     @Override
     public Iterator<Entry<T, Double>> iterator() {
         return map.entrySet().iterator();
@@ -107,7 +132,7 @@ public class CountMap<T> implements Iterable<Entry<T, Double>> {
      * Returns the current value for the given label. If the label was never added before, 0 is returned.
      *
      * @param label
-     * @return
+     * @return the current value for this label (0 if the label was never added)
      */
     public Double get(T label) {
         Double value = map.get(label);
@@ -123,6 +148,10 @@ public class CountMap<T> implements Iterable<Entry<T, Double>> {
 
     public Set<T> keySet() {
         return map.keySet();
+    }
+
+    public Set<Entry<T, Double>> entrySet() {
+        return map.entrySet();
     }
 
     /**
