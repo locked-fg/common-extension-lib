@@ -1,6 +1,5 @@
 package de.lmu.ifi.dbs.utilities;
 
-import java.awt.geom.Point2D;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
