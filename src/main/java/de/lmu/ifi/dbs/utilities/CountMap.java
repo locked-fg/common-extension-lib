@@ -46,8 +46,10 @@ public class CountMap<T> implements Iterable<Entry<T, Double>> {
      * @param list
      * @see #addAll(java.util.Collection, int)
      */
-    public void addAll(Collection<T> list) {
-        addAll(list, 1);
+    public void add(Collection<T> list) {
+        for (T t : list) {
+            add(t, 1);
+        }
     }
 
     /**
@@ -56,7 +58,7 @@ public class CountMap<T> implements Iterable<Entry<T, Double>> {
      * @param list
      * @param value
      */
-    public void addAll(Collection<T> list, double value) {
+    public void add(Collection<T> list, double value) {
         for (T t : list) {
             add(t, value);
         }
