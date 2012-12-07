@@ -7,6 +7,12 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Some useful methods for operating on arrays. Some of the functionalities are also available in Google Guava (min/max
+ * for example), while others are not
+ *
+ * @author Franz
+ */
 public class Arrays2 {
 
     private static final Logger log = Logger.getLogger(Arrays2.class.getName());
