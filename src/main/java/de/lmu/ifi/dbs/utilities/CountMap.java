@@ -132,6 +132,9 @@ public class CountMap<T> implements Iterable<Entry<T, Double>> {
         map.clear();
     }
 
+    /**
+     * @return iterator over the entry set
+     */
     @Override
     public Iterator<Entry<T, Double>> iterator() {
         return map.entrySet().iterator();
