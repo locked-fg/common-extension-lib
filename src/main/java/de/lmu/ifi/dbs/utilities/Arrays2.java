@@ -14,30 +14,55 @@ public class Arrays2 {
     private Arrays2() {
     }
 
+    /**
+     * turns all values of the array to their absolute values
+     *
+     * @param data
+     */
     public static void abs(byte[] data) {
         for (int i = 0; i < data.length; i++) {
             data[i] = (byte) Math.abs(data[i]);
         }
     }
 
+    /**
+     * turns all values of the array to their absolute values
+     *
+     * @param data
+     */
     public static void abs(int[] data) {
         for (int i = 0; i < data.length; i++) {
             data[i] = Math.abs(data[i]);
         }
     }
 
+    /**
+     * turns all values of the array to their absolute values
+     *
+     * @param data
+     */
     public static void abs(float[] data) {
         for (int i = 0; i < data.length; i++) {
             data[i] = Math.abs(data[i]);
         }
     }
 
+    /**
+     * turns all values of the array to their absolute values
+     *
+     * @param data
+     */
     public static void abs(short[] data) {
         for (int i = 0; i < data.length; i++) {
             data[i] = (short) Math.abs(data[i]);
         }
     }
 
+    /**
+     * turns all values of the array to their absolute values
+     *
+     * @param data
+     */
     public static void abs(double[] data) {
         for (int i = 0; i < data.length; i++) {
             data[i] = Math.abs(data[i]);
