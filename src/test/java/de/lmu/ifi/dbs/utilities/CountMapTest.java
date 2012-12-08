@@ -30,7 +30,7 @@ public class CountMapTest {
         System.out.println("addAll");
         List<String> l = Arrays.asList(new String[]{"a", "b", "a"});
         CountMap map = new CountMap();
-        map.addAll(l);
+        map.add(l);
 
         assertEquals(2, map.get("a"), 0.01);
         assertEquals(1, map.get("b"), 0.01);
@@ -44,7 +44,7 @@ public class CountMapTest {
         System.out.println("addAll");
         List<String> l = Arrays.asList(new String[]{"a", "b", "a"});
         CountMap map = new CountMap();
-        map.addAll(l, 2);
+        map.add(l, 2);
 
         assertEquals(4, map.get("a"), 0.01);
         assertEquals(2, map.get("b"), 0.01);
