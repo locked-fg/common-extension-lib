@@ -20,6 +20,7 @@ Just some classes that I use very frequently in most of my projects
        added Math2 methods
        introduced some more packages
        enhanced the count map
+       added a multi count map
 1.2.0: Improved CountMap (supports double values)
 1.1.0: Java 6 Compatibility
 1.0.0: maven release
