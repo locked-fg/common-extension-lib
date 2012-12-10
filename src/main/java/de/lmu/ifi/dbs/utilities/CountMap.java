@@ -9,10 +9,11 @@ import java.util.Set;
 /**
  * Class used to count the amount of certain objects. For example: put(Foo) -> 1 but(Foo) -> 2
  *
+ * You probably want to use com.google.common.collect.Multiset instead if you only need integer counts
+ *
  * @author graf
  * @param <T>
  *
- * You probably want to use com.google.common.collect.Multiset instead if you only need integer counts
  * @see com.google.common.collect.Multiset
  * http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/Multiset.html
  */
