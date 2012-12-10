@@ -5,6 +5,26 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
+ * This class can be used to cound combinations of occurences.
+ *
+ * For example if you want to know how often {"A"} occurs but also want to count {"A", "B"}, you would simply do a
+ * <code>
+ * String[] ts1 = {"A"};
+ * String[] ts2 = {"A", "B"};
+ *
+ * MultiCountMap map = new MultiCountMap();
+ * map.add(ts1);
+ * map.add(ts1);
+ * map.add(ts2, 4); // for some reason we kno this occurs 4x
+ * map.add(ts2);
+ *
+ * map.get(ts1); // returns 1.0
+ * map.get(ts2); // returns 5.0
+ * </code>
+ *
+ * In clean OOP you might have (or should!) create separate objects for the inputs and override hashcode and equals. Yet
+ * this is sometimes just overkill and you simply want to count such occurences but do not want to concatenate the
+ * strings with some magic seprator etc. In this case, this class is for you.
  *
  * @author Franz
  */
@@ -22,10 +42,16 @@ public class MultiCountMap<T> {
         map.clear();
     }
 
-    public boolean isEmpty(){
+    /**
+     * Checks if the map is empty. Empty in this case means that there are no elements stored in the list. If an element
+     * with a count of 0 is stored, this does NOT mean empty.
+     *
+     * @return true if there is no element contained in the map.
+     */
+    public boolean isEmpty() {
         return map.isEmpty();
     }
-    
+
     /**
      * returns the current counter value
      *
