@@ -10,10 +10,8 @@ public class MaxDistance implements Distance {
     @Override
     public double dist(double[] a, double[] b) {
         double max = 0;
-        double tmp;
         for (int i = 0; i < b.length; i++) {
-            tmp = Math.abs(a[i] - b[i]);
-            max = Math.max(max, tmp);
+            max = Math.max(max, Math.abs(a[i] - b[i]));
         }
         return max;
     }
@@ -21,10 +19,8 @@ public class MaxDistance implements Distance {
     @Override
     public short dist(short[] a, short[] b) {
         int max = 0;
-        int tmp;
         for (int i = 0; i < b.length; i++) {
-            tmp = Math.abs(a[i] - b[i]);
-            max = Math.max(max, tmp);
+            max = Math.max(max, Math.abs(a[i] - b[i]));
         }
         return (short) max;
     }
@@ -32,10 +28,8 @@ public class MaxDistance implements Distance {
     @Override
     public float dist(float[] a, float[] b) {
         float max = 0;
-        float tmp;
         for (int i = 0; i < b.length; i++) {
-            tmp = Math.abs(a[i] - b[i]);
-            max = Math.max(max, tmp);
+            max = Math.max(max, Math.abs(a[i] - b[i]));
         }
         return max;
     }
@@ -43,10 +37,8 @@ public class MaxDistance implements Distance {
     @Override
     public long dist(long[] a, long[] b) {
         long max = 0;
-        long tmp;
         for (int i = 0; i < b.length; i++) {
-            tmp = Math.abs(a[i] - b[i]);
-            max = Math.max(max, tmp);
+            max = Math.max(max, Math.abs(a[i] - b[i]));
         }
         return max;
     }
@@ -54,10 +46,8 @@ public class MaxDistance implements Distance {
     @Override
     public int dist(int[] a, int[] b) {
         int max = 0;
-        int tmp;
         for (int i = 0; i < b.length; i++) {
-            tmp = Math.abs(a[i] - b[i]);
-            max = Math.max(max, tmp);
+            max = Math.max(max, Math.abs(a[i] - b[i]));
         }
         return max;
     }
@@ -65,10 +55,8 @@ public class MaxDistance implements Distance {
     @Override
     public byte dist(byte[] a, byte[] b) {
         int max = 0;
-        int tmp;
         for (int i = 0; i < b.length; i++) {
-            tmp = Math.abs(a[i] - b[i]);
-            max = Math.max(max, tmp);
+            max = Math.max(max, Math.abs(a[i] - b[i]));
         }
         return (byte) max;
     }
