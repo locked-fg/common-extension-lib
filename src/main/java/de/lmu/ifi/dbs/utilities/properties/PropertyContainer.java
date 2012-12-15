@@ -21,9 +21,8 @@ import java.util.logging.Logger;
 
 /**
  * Class for storing and fetching properties to/from a Properties-file.
- * 
- * https://github.com/typesafehub/config
- * might be a better alternative!
+ *
+ * https://github.com/typesafehub/config might be a better alternative!
  */
 public class PropertyContainer {
 
@@ -59,8 +58,8 @@ public class PropertyContainer {
     }
 
     /**
-     * Create a new PropertyContainer in the specified directory. If the
-     * directoriy or configfile doesn't exist, it'll be created
+     * Create a new PropertyContainer in the specified directory. If the directoriy or configfile doesn't exist, it'll
+     * be created
      *
      * @param dir
      * @param filename
@@ -143,8 +142,7 @@ public class PropertyContainer {
     }
 
     /**
-     * Simple delegate to
-     * {@link #setProperty(java.lang.String, java.lang.String)}
+     * Simple delegate to {@link #setProperty(java.lang.String, java.lang.String)}
      */
     public String setString(String key, String value) {
         return setProperty(key, value);
@@ -169,7 +167,6 @@ public class PropertyContainer {
     public Integer setProperty(String key, int i) {
         Integer old = getInteger(key);
         setProperty(key, Integer.toString(i));
-//        firePropertyChange(key, old, getInteger(key));
         return old;
     }
 
@@ -179,6 +176,14 @@ public class PropertyContainer {
             return null;
         }
         return Double.parseDouble(value);
+    }
+
+    public Double getDouble(String key, double def) {
+        Double v = getDouble(key);
+        if (v == null) {
+            return def;
+        }
+        return v;
     }
 
     public Float getFloat(String key) {

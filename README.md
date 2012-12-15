@@ -16,6 +16,7 @@ Just some classes that I use very frequently in most of my projects
 ```
 
 # History
+2.1.0: added max dist
 2.0.0: removed deprecated methods
        added Math2 methods
        introduced some more packages
