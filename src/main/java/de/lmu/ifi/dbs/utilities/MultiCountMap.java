@@ -15,7 +15,7 @@ import java.util.List;
  * MultiCountMap map = new MultiCountMap();
  * map.add(ts1);
  * map.add(ts1);
- * map.add(ts2, 4); // for some reason we kno this occurs 4x
+ * map.add(ts2, 4); // for some reason we know this occurs 4x
  * map.add(ts2);
  *
  * map.get(ts1); // returns 1.0
