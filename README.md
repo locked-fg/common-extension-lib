@@ -11,11 +11,12 @@ Just some classes that I use very frequently in most of my projects
 <dependency>
   <groupId>de.lmu.ifi.dbs</groupId>
   <artifactId>commons-extension-lib</artifactId>
-  <version>2.0.0</version>
+  <version>2.2.0</version>
 </dependency>
 ```
 
 # History
+2.2.0: extended PropertyContainer
 2.1.0: added max dist
        added getDouble to PropertyContainer
        removed de.lmu.ifi.dbs.utilities.formatter (Logging formatter)

@@ -29,7 +29,7 @@ public class PropertyContainer {
 
     private static final Logger log = Logger.getLogger(PropertyContainer.class.getName());
     protected final Properties properties = new Properties();
-    protected final String SEPARATOR = ";";
+    protected String separator = ";";
     protected final File configfile;
     protected String comment = null;
 
@@ -72,6 +72,24 @@ public class PropertyContainer {
      */
     public PropertyContainer(File dir, String filename) throws IOException {
         this(new File(dir, filename));
+    }
+
+    /**
+     * The separator sign for arrays/lists etc
+     *
+     * @return
+     */
+    public String getSeparator() {
+        return separator;
+    }
+
+    /**
+     * The separator sign for arrays/lists etc
+     *
+     * @return
+     */
+    public void setSeparator(String separator) {
+        this.separator = separator;
     }
 
     /**
@@ -264,14 +282,14 @@ public class PropertyContainer {
         }
 
         ArrayList<String> list = new ArrayList<String>(0);
-        String[] p = value.split(SEPARATOR);
+        String[] p = value.split(separator);
         list.addAll(Arrays.asList(p));
         return list;
     }
 
     public List<String> setProperty(String key, String[] tags) {
         List<String> old = getStringArray(key);
-        setProperty(key, Arrays2.join(tags, SEPARATOR));
+        setProperty(key, Arrays2.join(tags, separator));
         return old;
     }
 
@@ -288,7 +306,7 @@ public class PropertyContainer {
         }
 
         Dimension d = null;
-        String[] s = value.split(SEPARATOR);
+        String[] s = value.split(separator);
         if (s.length == 2) {
             d = new Dimension();
             d.width = Integer.parseInt(s[0]);
@@ -299,7 +317,7 @@ public class PropertyContainer {
 
     public Dimension setProperty(String key, Dimension d) {
         Dimension old = getDimension(key);
-        setProperty(key, d.width + SEPARATOR + d.height);
+        setProperty(key, d.width + separator + d.height);
         return old;
     }
 
@@ -322,7 +340,7 @@ public class PropertyContainer {
 
     public Color setProperty(String key, Color c) {
         Color old = getColor(key);
-        String s = c.getRed() + SEPARATOR + c.getGreen() + SEPARATOR + c.getBlue() + SEPARATOR + c.getAlpha();
+        String s = c.getRed() + separator + c.getGreen() + separator + c.getBlue() + separator + c.getAlpha();
         setProperty(key, s);
         return old;
     }
@@ -334,7 +352,7 @@ public class PropertyContainer {
         }
 
         Point p = new Point();
-        String[] s = value.split(SEPARATOR);
+        String[] s = value.split(separator);
         if (s.length == 2) {
             p.x = Integer.parseInt(s[0]);
             p.y = Integer.parseInt(s[1]);
@@ -344,7 +362,7 @@ public class PropertyContainer {
 
     public Point setProperty(String key, Point p) {
         Point old = getPoint(key);
-        setProperty(key, p.x + SEPARATOR + p.y);
+        setProperty(key, p.x + separator + p.y);
         return old;
     }
 
