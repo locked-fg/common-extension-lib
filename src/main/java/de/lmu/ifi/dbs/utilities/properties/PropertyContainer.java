@@ -32,6 +32,10 @@ public class PropertyContainer {
     protected final File configfile;
     protected String comment = null;
 
+    public PropertyContainer() {
+        configfile = null;
+    }
+
     public PropertyContainer(Properties parent) {
         properties.putAll(parent);
         configfile = null;
@@ -365,7 +369,7 @@ public class PropertyContainer {
         for (Field f : myObject.getClass().getFields()) {
             if (f.isAnnotationPresent(PrefixedProperty.class)) {
                 PrefixedProperty annotation = f.getAnnotation(PrefixedProperty.class);
-                String key = null;
+                String key;
                 if (annotation.prefix().length() != 0) {
                     key = annotation.prefix() + "." + f.getName();
                 } else {
