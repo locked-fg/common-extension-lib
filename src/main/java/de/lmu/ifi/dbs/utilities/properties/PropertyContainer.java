@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
@@ -133,7 +134,6 @@ public class PropertyContainer {
     public String setProperty(String key, String value) {
         String old = getProperty(key);
         properties.setProperty(key, value);
-//        firePropertyChange(key, old, value);
         return old;
     }
 
@@ -201,7 +201,6 @@ public class PropertyContainer {
     public Double setProperty(String key, double i) {
         Double old = getDouble(key);
         setProperty(key, Double.toString(i));
-//        firePropertyChange(key, old, getInteger(key));
         return old;
     }
 
@@ -210,7 +209,7 @@ public class PropertyContainer {
         if (value == null) {
             return null;
         }
-        return new Boolean(value);
+        return Boolean.valueOf(value);
     }
 
     public Boolean getBoolean(String key, Boolean default_value) {
@@ -221,7 +220,6 @@ public class PropertyContainer {
     public Boolean setProperty(String key, boolean b) {
         Boolean old = getBoolean(key);
         setProperty(key, Boolean.toString(b));
-//        firePropertyChange(key, old, getBoolean(key));
         return old;
     }
 
@@ -256,7 +254,6 @@ public class PropertyContainer {
         } else {
             setProperty(key, f.getAbsolutePath());
         }
-//        firePropertyChange(key, old, getFile(key));
         return old;
     }
 
@@ -268,16 +265,13 @@ public class PropertyContainer {
 
         ArrayList<String> list = new ArrayList<String>(0);
         String[] p = value.split(SEPARATOR);
-        for (String o : p) {
-            list.add(o);
-        }
+        list.addAll(Arrays.asList(p));
         return list;
     }
 
     public List<String> setProperty(String key, String[] tags) {
         List<String> old = getStringArray(key);
         setProperty(key, Arrays2.join(tags, SEPARATOR));
-//        firePropertyChange(key, old, getStringArray(key));
         return old;
     }
 
@@ -306,7 +300,6 @@ public class PropertyContainer {
     public Dimension setProperty(String key, Dimension d) {
         Dimension old = getDimension(key);
         setProperty(key, d.width + SEPARATOR + d.height);
-//        firePropertyChange(key, old, getDimension(key));
         return old;
     }
 
@@ -331,7 +324,6 @@ public class PropertyContainer {
         Color old = getColor(key);
         String s = c.getRed() + SEPARATOR + c.getGreen() + SEPARATOR + c.getBlue() + SEPARATOR + c.getAlpha();
         setProperty(key, s);
-//        firePropertyChange(key, old, getColor(key));
         return old;
     }
 
@@ -353,7 +345,6 @@ public class PropertyContainer {
     public Point setProperty(String key, Point p) {
         Point old = getPoint(key);
         setProperty(key, p.x + SEPARATOR + p.y);
-//        firePropertyChange(key, old, getPoint(key));
         return old;
     }
 
