@@ -7,15 +7,12 @@ import static org.junit.Assert.*;
 
 public class Arrays2Test {
     
-    public Arrays2Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() throws Exception {
+    @Test
+    public void testDivZero(){
+        double[] a = {1d,2d};
+        Arrays2.div(a, 0);
+        assertEquals(1, a[0], 0.0001);
+        assertEquals(2, a[1], 0.0001);
     }
 
     @Test

@@ -16,6 +16,14 @@ public class VectorsTest {
     }
 
     @Test
+    public void testNormalizeZero() {
+        double[] in = new double[]{0, 0};
+        Vectors.normalize(in);
+        assertEquals(0, in[0], 0.00001);
+        assertEquals(0, in[1], 0.00001);
+    }
+
+    @Test
     public void testNormalize() {
         double[] exp = new double[]{Math.sqrt(.5), Math.sqrt(.5)};
         double[] in = new double[]{3, 3};
