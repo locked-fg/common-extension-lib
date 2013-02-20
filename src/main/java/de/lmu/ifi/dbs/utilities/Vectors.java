@@ -12,7 +12,10 @@ public final class Vectors {
      * @param in
      */
     public static void normalize(double[] in) {
-        Arrays2.div(in, length(in));
+        double length = length(in);
+        if (length != 0) {
+            Arrays2.div(in, length);
+        }
     }
 
     public static double cosinus(double[] a, double[] b) {

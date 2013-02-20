@@ -592,6 +592,10 @@ public class Arrays2 {
      * @param factor
      */
     public static void div(double[] data, double factor) {
+        if (factor == 0) {
+            log.warning("attempting to divide an array by zero. Ignoring.");
+            return;
+        }
         mul(data, 1 / factor);
     }
 
