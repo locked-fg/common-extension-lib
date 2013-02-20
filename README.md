@@ -16,6 +16,7 @@ Just some classes that I use very frequently in most of my projects
 ```
 
 # History
+2.3.0: added div by zero checks
 2.2.0: extended PropertyContainer
 2.1.0: added max dist
        added getDouble to PropertyContainer
