@@ -22,6 +22,7 @@ public class Collections2 {
      * @throws NullPointerException if in = null
      * @throws IllegalArgumentException if size > in.size()
      */
+    @Deprecated
     public static <T> List<T> randomSample(final Collection<T> in, int size) {
         if (in == null) {
             throw new NullPointerException("in must not be null");
@@ -47,6 +48,7 @@ public class Collections2 {
      * @throws NullPointerException if in = null
      * @throws IllegalArgumentException if ratio <= 0 || ratio > 1
      */
+    @Deprecated
     public static <T> List<T> randomSample(final Collection<T> in, double ratio, Random rnd) {
         if (in == null) {
             throw new NullPointerException("in must not be null");
@@ -68,6 +70,7 @@ public class Collections2 {
      * @throws NullPointerException if in = null
      * @throws IllegalArgumentException if size > in.size()
      */
+    @Deprecated
     public static <T> List<T> randomSample(final Collection<T> in, int size, Random rnd) {
         if (in == null) {
             throw new NullPointerException("in must not be null");
@@ -333,6 +336,7 @@ public class Collections2 {
      * @param a
      * @param b
      */
+    @Deprecated
     public static <S extends Number, T extends Number> void addAsInteger(List<T> a, List<S> b) {
         while (a.size() < b.size()) {
             a.add((T) Integer.valueOf(0));
