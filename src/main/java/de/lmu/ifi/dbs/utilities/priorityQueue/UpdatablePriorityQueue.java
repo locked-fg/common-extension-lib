@@ -1,36 +1,37 @@
 package de.lmu.ifi.dbs.utilities.priorityQueue;
 
-import de.lmu.ifi.dbs.utilities.priorityQueue.MutablePriorityObject;
+import static de.lmu.ifi.dbs.utilities.priorityQueue.PriorityQueue.ASCENDING;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
 /**
- * A Queue which contains sorted key-value-pairs ordered by value. The values
- * can be updated and the order will still remain. Insertion of elements is
- * O(log n)
+ * A Queue which contains sorted key-value-pairs ordered by value. The values can be updated and the order will still
+ * remain. Insertion of elements is O(log n)
+ *
+ * @param <T>
  */
 public class UpdatablePriorityQueue<T extends MutablePriorityObject> {
 
-    private final boolean ASCENDING = true;
     private final boolean DESCENDING = false;
-    private ArrayList<T> queue; // Heap-structure contains Objects
-    private TreeMap<Comparable<T>, Integer> direct; // Key-address-pair for fast
-    private boolean order; // order of objects in the heap
+    private final ArrayList<T> queue; // Heap-structure contains Objects
+    private final TreeMap<Comparable<T>, Integer> direct; // Key-address-pair for fast
+    private final boolean order; // order of objects in the heap
 
     /**
-     * Standard constructor of the UpdatableQueue class. It creates a priority
-     * queue which is sorted with ascending or descending priority.
+     * Standard constructor of the UpdatableQueue class. It creates a priority queue which is sorted with ascending or
+     * descending priority.
+     *
+     * @param ascending
      */
     public UpdatablePriorityQueue(boolean ascending) {
-        queue = new ArrayList<T>();
-        direct = new TreeMap<Comparable<T>, Integer>();
+        queue = new ArrayList<>();
+        direct = new TreeMap<>();
         order = ascending;
     }
 
     /**
-     * inserts an object to the queue at the appropriate position, or updates
-     * the priority and the position if the object is already in the queue and
-     * it's new priority is higher than the old one.
+     * inserts an object to the queue at the appropriate position, or updates the priority and the position if the
+     * object is already in the queue and it's new priority is higher than the old one.
      */
     public void insertIfBetter(T po) {
         int i = 0;
@@ -49,12 +50,10 @@ public class UpdatablePriorityQueue<T extends MutablePriorityObject> {
     }
 
     /**
-     * inserts an object to the queue at the appropriate position, or updates
-     * the priority (adding a value) and the position if the object is already
-     * in the queue.
+     * inserts an object to the queue at the appropriate position, or updates the priority (adding a value) and the
+     * position if the object is already in the queue.
      *
-     * @param po
-     *            The priority object to be added
+     * @param po The priority object to be added
      */
     public void insertAdditive(T po) {
         int i = 0;
@@ -192,8 +191,7 @@ public class UpdatablePriorityQueue<T extends MutablePriorityObject> {
     }
 
     /**
-     * Removes the first object from the queue and returns that object to the
-     * caller.
+     * Removes the first object from the queue and returns that object to the caller.
      *
      * @return the first object in the queue.
      */
@@ -209,7 +207,7 @@ public class UpdatablePriorityQueue<T extends MutablePriorityObject> {
 
     @Override
     public UpdatablePriorityQueue<T> clone() {
-        UpdatablePriorityQueue<T> result = new UpdatablePriorityQueue<T>(order);
+        UpdatablePriorityQueue<T> result = new UpdatablePriorityQueue<>(order);
         for (int i = 0; i < queue.size(); i++) {
             result.insertIfBetter(queue.get(i));
         }

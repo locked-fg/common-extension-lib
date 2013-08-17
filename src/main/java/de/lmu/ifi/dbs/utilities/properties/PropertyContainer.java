@@ -46,15 +46,16 @@ public class PropertyContainer {
      * uses the specified file as config file
      *
      * @param file
+     * @throws java.io.IOException
      */
     public PropertyContainer(File file) throws IOException {
         if (file == null) {
             throw new NullPointerException("Filename mustn't be null");
         }
         this.configfile = file;
-        InputStream in = new BufferedInputStream(new FileInputStream(configfile));
-        properties.load(in);
-        in.close();
+        try (InputStream in = new BufferedInputStream(new FileInputStream(configfile))) {
+            properties.load(in);
+        }
     }
 
     public PropertyContainer(InputStream stream) throws IOException {
@@ -139,9 +140,11 @@ public class PropertyContainer {
                 configfile.getParentFile().mkdirs();
                 configfile.createNewFile();
             }
-            OutputStream out = new BufferedOutputStream(new FileOutputStream(configfile));
-            properties.store(out, comment);
-            out.close();
+
+            try (FileOutputStream fos = new FileOutputStream(configfile)) {
+                OutputStream out = new BufferedOutputStream(fos);
+                properties.store(out, comment);
+            }
         }
     }
 

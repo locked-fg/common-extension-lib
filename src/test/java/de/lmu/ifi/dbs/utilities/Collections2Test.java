@@ -2,8 +2,6 @@ package de.lmu.ifi.dbs.utilities;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-import java.util.Random;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -120,10 +118,10 @@ public class Collections2Test {
 //    }
     @Test
     public void testJoinFormatted() {
-        Collection<Integer> list = new ArrayList<Integer>();
+        Collection<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
-        Formatter<Integer> f = new Formatter<Integer>();
+        Formatter<Integer> f = new Formatter<>();
 
         String result = Collections2.join(list, f, "|");
         String expected = "1|2";
@@ -132,7 +130,7 @@ public class Collections2Test {
 
     @Test
     public void testMax() {
-        Collection<Integer> in = new ArrayList<Integer>();
+        Collection<Integer> in = new ArrayList<>();
         in.add(new Integer(1));
         in.add(new Integer(2));
         in.add(new Integer(3));
@@ -143,7 +141,7 @@ public class Collections2Test {
 
     @Test
     public void testMin() {
-        Collection<Integer> in = new ArrayList<Integer>();
+        Collection<Integer> in = new ArrayList<>();
         in.add(new Integer(1));
         in.add(new Integer(2));
         in.add(new Integer(3));

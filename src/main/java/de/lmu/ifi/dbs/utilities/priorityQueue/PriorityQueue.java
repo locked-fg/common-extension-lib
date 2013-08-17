@@ -63,6 +63,7 @@ public class PriorityQueue<T> extends
     }
 
     @Override
+    @SuppressWarnings("CloneDeclaresCloneNotSupported")
     public PriorityQueue<T> clone() {
         PriorityQueue<T> pq = new PriorityQueue<T>(this.asc, queue.length);
         System.arraycopy(queue, 0, pq.queue, 0, queue.length);

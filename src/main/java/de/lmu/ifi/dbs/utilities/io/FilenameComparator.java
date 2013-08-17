@@ -1,12 +1,13 @@
 package de.lmu.ifi.dbs.utilities.io;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.Comparator;
 
 /**
  * Sort Files lexicographically by their names regarding name of parent dir
  */
-public class FilenameComparator implements Comparator<File> {
+public class FilenameComparator implements Comparator<File>, Serializable {
 
     @Override
     public int compare(File o1, File o2) {

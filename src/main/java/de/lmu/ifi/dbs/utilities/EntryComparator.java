@@ -16,7 +16,7 @@ public class EntryComparator {
      *
      * @param <T>
      */
-    public class Value<T extends Comparable> implements Comparator<Entry<?, T>> {
+    public static class Value<T extends Comparable> implements Comparator<Entry<?, T>> {
 
         private int invert = 1;
 
@@ -41,7 +41,7 @@ public class EntryComparator {
      *
      * @param <T>
      */
-    public class Key<T extends Comparable> implements Comparator<Entry<T, ?>> {
+    public static class Key<T extends Comparable> implements Comparator<Entry<T, ?>> {
 
         private int invert = 1;
 

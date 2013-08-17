@@ -175,8 +175,10 @@ public class Arrays2 {
      *
      * @param arr
      * @return array with unique elements from arr
+     * @deprecated since 2.4.0, use Arrays2#unique(double[] arr, double accuracy instead)
      */
     @SuppressWarnings("unchecked")
+    @Deprecated
     public static double[] unique(double[] arr) {
         double[] uniques = arr.clone();
         Arrays.sort(uniques);
@@ -311,11 +313,19 @@ public class Arrays2 {
         if (src.length == 0) {
             return -1;
         }
-        for (int i = 0; i < src.length; i++) {
-            if (o == null && src[i] == null) {
-                return i;
-            } else if (o.equals(src[i])) {
-                return i;
+
+        if (o == null) {
+            for (int i = 0; i < src.length; i++) {
+                if (src[i] == null) {
+                    return i;
+                }
+            }
+        } else {
+            // o != null
+            for (int i = 0; i < src.length; i++) {
+                if (o.equals(src[i])) {
+                    return i;
+                }
             }
         }
 
@@ -910,7 +920,7 @@ public class Arrays2 {
         assert kernel.length % 2 == 1 : "mask's size must be odd";
 
         // Arrays.fill(out, 0);
-        int offset = (int) Math.floor(kernel.length / 2);
+        int offset = (int) Math.floor(kernel.length / 2d);
         for (int i = 0; i < in.length; i++) {
             double v = 0;
             for (int j = 0; j < kernel.length; j++) {
@@ -950,7 +960,7 @@ public class Arrays2 {
         }
 
         // Arrays.fill(out, 0);
-        int offset = (int) Math.floor(kernel.length / 2);
+        int offset = (int) Math.floor(kernel.length / 2d);
         for (int i = 0; i < in.length; i++) {
             double v = 0;
             for (int j = 0; j < kernel.length; j++) {
@@ -983,7 +993,7 @@ public class Arrays2 {
         assert kernel.length % 2 == 1 : "mask's size must be odd";
 
         // Arrays.fill(out, 0);
-        int offset = (int) Math.floor(kernel.length / 2);
+        int offset = (int) Math.floor(kernel.length / 2d);
         for (int i = 0; i < in.length; i++) {
             double v = 0;
             for (int j = 0; j < kernel.length; j++) {
@@ -1274,7 +1284,7 @@ public class Arrays2 {
      */
     public static void replaceNaN(double[] arr, double r) {
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != arr[i]) {
+            if (Double.isNaN(arr[i])) {
                 arr[i] = r;
             }
         }

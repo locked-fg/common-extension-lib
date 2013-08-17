@@ -11,7 +11,7 @@ public class Statistics {
     }
 
     public static double mean(byte... a) {
-        return Arrays2.sum(a) / a.length;
+        return 1d * Arrays2.sum(a) / a.length;
     }
 
     public static double mean(float... a) {
