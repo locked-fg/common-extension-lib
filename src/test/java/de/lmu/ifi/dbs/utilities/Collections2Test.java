@@ -2,6 +2,7 @@ package de.lmu.ifi.dbs.utilities;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -22,6 +23,18 @@ public class Collections2Test {
 
     @AfterClass
     public static void tearDownClass() throws Exception {
+    }
+
+    @Test
+    public void testLastList() {
+        List arrayList = new ArrayList();
+        assertNull(Collections2.last(arrayList));
+    }
+
+    @Test
+    public void testLastCollection() {
+        Collection arrayList = new ArrayList();
+        assertNull(Collections2.last(arrayList));
     }
 
 //    @Test

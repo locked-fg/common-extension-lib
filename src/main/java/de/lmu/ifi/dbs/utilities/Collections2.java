@@ -372,14 +372,17 @@ public class Collections2 {
      */
     public static <T> T last(Collection<T> collection) {
         int size = collection.size();
+
         T last = null;
 
         // logic copied from Collections.reverse
-        if (size < REVERSE_THRESHOLD || collection instanceof RandomAccess) {
-            last = ((List<T>) collection).get(size - 1);
-        } else {
-            for (T tmp : collection) {
-                last = tmp;
+        if (size != 0) {
+            if (size < REVERSE_THRESHOLD || collection instanceof RandomAccess) {
+                last = ((List<T>) collection).get(size - 1);
+            } else {
+                for (T tmp : collection) {
+                    last = tmp;
+                }
             }
         }
         return last;
