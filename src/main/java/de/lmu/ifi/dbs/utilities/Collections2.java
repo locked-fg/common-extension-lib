@@ -354,9 +354,12 @@ public class Collections2 {
      *
      * @param <T>
      * @param list
-     * @return
+     * @return last element of the list or null if the list is empty
      */
     public static <T> T last(List<T> list) {
+        if (list.isEmpty()) {
+            return null;
+        }
         return list.get(list.size() - 1);
     }
 
@@ -365,7 +368,7 @@ public class Collections2 {
      *
      * @param <T>
      * @param list
-     * @return
+     * @return last element of the list or null if the list is empty
      */
     public static <T> T last(Collection<T> collection) {
         int size = collection.size();
