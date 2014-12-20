@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.RandomAccess;
 
+/**
+ * Keep in mind that alot of these fucntions can be achived by Streams as well!
+ */
 public class Collections2 {
 
     private static final int REVERSE_THRESHOLD = 18; // Collections
@@ -22,7 +25,6 @@ public class Collections2 {
      * @throws NullPointerException if in = null
      * @throws IllegalArgumentException if size > in.size()
      */
-    @Deprecated
     public static <T> List<T> randomSample(final Collection<T> in, int size) {
         if (in == null) {
             throw new NullPointerException("in must not be null");
@@ -34,29 +36,7 @@ public class Collections2 {
         if (in == null) {
             throw new NullPointerException("in must not be null");
         }
-        return randomSample(in, ratio, new Random());
-    }
-
-    /**
-     * returns a random sample from the input list
-     *
-     * @param <T>
-     * @param in source list
-     * @param ratio percentage of returned elements = Math.round(in.size() * ratio
-     * @param rnd random seed
-     * @return UNSORTED random sample from the list
-     * @throws NullPointerException if in = null
-     * @throws IllegalArgumentException if ratio <= 0 || ratio > 1
-     */
-    @Deprecated
-    public static <T> List<T> randomSample(final Collection<T> in, double ratio, Random rnd) {
-        if (in == null) {
-            throw new NullPointerException("in must not be null");
-        }
-        if (ratio <= 0 || ratio > 1) {
-            throw new IllegalArgumentException("ratio must be in ]0,1] but was " + ratio);
-        }
-        return randomSample(in, (int) Math.round(in.size() * ratio), rnd);
+        return randomSample(in, (int) Math.round(in.size() * ratio), new Random());
     }
 
     /**
@@ -65,12 +45,11 @@ public class Collections2 {
      * @param <T>
      * @param in source list
      * @param size size of sample
-     * @return rnd Random seed
+     * @param rnd Radnom generator
      * @return UNSORTED random sample from the list
      * @throws NullPointerException if in = null
      * @throws IllegalArgumentException if size > in.size()
      */
-    @Deprecated
     public static <T> List<T> randomSample(final Collection<T> in, int size, Random rnd) {
         if (in == null) {
             throw new NullPointerException("in must not be null");
@@ -80,10 +59,10 @@ public class Collections2 {
         }
         // sampling = 0, nothing
         if (size == 0) {
-            return new ArrayList<T>(0);
+            return Collections.EMPTY_LIST;
         }
         // sampling = 100% -> all
-        ArrayList<T> out = new ArrayList<T>(in);
+        ArrayList<T> out = new ArrayList<>(in);
         if (size == in.size()) {
             return out;
         }
@@ -101,11 +80,12 @@ public class Collections2 {
     /**
      * Returns a new List with unique elements from the source list.
      *
+     * @param <T>
      * @param src
      * @return list with unique elements from src
      */
     public static <T> List<T> unique(Collection<T> src) {
-        List<T> dst = new ArrayList<T>(src.size());
+        List<T> dst = new ArrayList<>(src.size());
         for (T elem : src) {
             if (!dst.contains(elem)) {
                 dst.add(elem);
@@ -126,15 +106,16 @@ public class Collections2 {
         return -1;
     }
 
+    /**
+     *
+     * @param in
+     * @param glue
+     * @return
+     * @deprecated since 2.5.0
+     * @see #join(java.util.Collection, java.lang.String)
+     */
     public static String joinToString(List in, String glue) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < in.size(); i++) {
-            sb.append(in.get(i));
-            if (i < in.size() - 1) {
-                sb.append(glue);
-            }
-        }
-        return sb.toString();
+        return join(in, glue);
     }
 
     /**
@@ -159,10 +140,11 @@ public class Collections2 {
     }
 
     /**
-     * Find and return the object the is the max value
+     * Find and return the object that is the max value
      *
      * @param <T>
      * @param in
+     * @return 
      * @see #max(java.util.Collection)
      */
     public static <T extends Comparable> T maxValue(Collection<T> in) {
@@ -181,6 +163,7 @@ public class Collections2 {
      * Find and return the index with the greatest value. If there are >1 maxima with the same value, only the first
      * index will be returned.
      *
+     * @param <T>
      * @param in the collection of objects
      * @param comparator which does the comparisons
      * @return max array index of max value
@@ -203,7 +186,7 @@ public class Collections2 {
      * Find and return the index with the smallest value. If there are >1 maxima with the same value, only the first
      * index will be returned.
      *
-     * @param a
+     * @param in
      * @return max array index of max value
      */
     public static int min(Collection<? extends Comparable> in) {
@@ -225,6 +208,7 @@ public class Collections2 {
      *
      * @param <T>
      * @param in
+     * @return 
      * @see #max(java.util.Collection)
      */
     public static <T extends Comparable> T minValue(Collection<T> in) {
@@ -243,6 +227,7 @@ public class Collections2 {
      * Find and return the index with the greatest value. If there are >1 maxima with the same value, only the first
      * index will be returned.
      *
+     * @param <T>
      * @param in the collection of objects
      * @param comparator which does the comparisons
      * @return max array index of max value
@@ -331,25 +316,6 @@ public class Collections2 {
     }
 
     /**
-     * adds b to a: a[i] += b[i] <br> Afterwards a has the size of max(a.size(),b.size())
-     *
-     * @param a
-     * @param b
-     */
-    @Deprecated
-    public static <S extends Number, T extends Number> void addAsInteger(List<T> a, List<S> b) {
-        while (a.size() < b.size()) {
-            a.add((T) Integer.valueOf(0));
-        }
-        Integer ia, ib;
-        for (int i = 0; i < b.size(); i++) {
-            ia = a.get(i).intValue();
-            ib = b.get(i).intValue();
-            a.set(i, (T) Integer.valueOf(ia + ib));
-        }
-    }
-
-    /**
      * returns the last element of the list.
      *
      * @param <T>
@@ -367,7 +333,7 @@ public class Collections2 {
      * returns the last element of the collection.
      *
      * @param <T>
-     * @param list
+     * @param collection 
      * @return last element of the list or null if the list is empty
      */
     public static <T> T last(Collection<T> collection) {

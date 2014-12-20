@@ -1,5 +1,7 @@
 package de.lmu.ifi.dbs.utilities;
 
+import java.util.function.IntFunction;
+import java.util.function.IntToDoubleFunction;
 import java.util.logging.Logger;
 
 public class Statistics {
@@ -24,7 +26,7 @@ public class Statistics {
 
     /**
      * Get the average value of <code>arr</code> within <code>[a,...,b]</code>.
-     * 
+     *
      * @param arr the input array
      * @param a start index inclusive
      * @param b end index inclusive
@@ -44,7 +46,7 @@ public class Statistics {
 
     /**
      * Get the average value of <code>arr</code> within <code>[a,...,b]</code>.
-     * 
+     *
      * @param arr the input array
      * @param a start index inclusive
      * @param b end index inclusive
@@ -64,7 +66,7 @@ public class Statistics {
 
     /**
      * Get the average value of <code>arr</code> within <code>[a,...,b]</code>.
-     * 
+     *
      * @param arr the input array
      * @param a start index inclusive
      * @param b end index inclusive
@@ -84,10 +86,9 @@ public class Statistics {
 
     /**
      * Computes the median of an array which is already sorted.<br/>
-     * <em>Warning:</em> If <code>a</code> is not sorted, this method will just
-     * return some arbitrary value of <code>a</code> (impair number of elements)
-     * or the average value of two arbitrary values of <code>a</code>.
-     * 
+     * <em>Warning:</em> If <code>a</code> is not sorted, this method will just return some arbitrary value of
+     * <code>a</code> (impair number of elements) or the average value of two arbitrary values of <code>a</code>.
+     *
      * @param a A <em>sorted</em> array.
      * @return The median value of the sorted array <code>a</code>.
      */
@@ -106,14 +107,11 @@ public class Statistics {
     }
 
     /**
-     * Computes the maximum likelihood estimate (assuming a normal distribution)
-     * and NOT the empirical variance.
-     * 
+     * Computes the maximum likelihood estimate (assuming a normal distribution) and NOT the empirical variance.
+     *
      * @param a
-     * @return <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a))</code>
-     * ,<br/>
-     * computed as
-     * <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub><sup>2</sup>) - avg(a)<sup>2</sup></code>
+     * @return <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a))</code> ,<br/>
+     * computed as <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub><sup>2</sup>) - avg(a)<sup>2</sup></code>
      */
     public static double var(double[] a) {
         // VAR(X) = E(X^2) - E(X)^2
@@ -131,16 +129,13 @@ public class Statistics {
     }
 
     /**
-     * Computes the maximum likelihood estimate (assuming a normal distribution)
-     * and not the empirical variance.
-     * 
+     * Computes the maximum likelihood estimate (assuming a normal distribution) and not the empirical variance.
+     *
      * @param arr
      * @param a from index
      * @param b to index (inclusive)
-     * @return <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a))</code>
-     * ,<br/>
-     * computed as
-     * <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub><sup>2</sup>) - avg(a)<sup>2</sup></code>
+     * @return <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a))</code> ,<br/>
+     * computed as <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub><sup>2</sup>) - avg(a)<sup>2</sup></code>
      */
     public static double var(double[] arr, int a, int b) {
         // var X = E(X^2) - (E(X))^2
@@ -159,14 +154,12 @@ public class Statistics {
     }
 
     /**
-     * Computes the standard deviation of a sample based on the result of
-     * {@link #var(double[])}.
-     * 
+     * Computes the standard deviation of a sample based on the result of {@link #var(double[])}.
+     *
      * @param a
-     * @return <code>sqrt(1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a)))</code>
-     * ,<br/>
-     * computed as
-     * <code>sqrt(1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub><sup>2</sup>) - avg(a)<sup>2</sup>)</code>
+     * @return <code>sqrt(1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a)))</code> ,<br/>
+     * computed as <code>sqrt(1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub><sup>2</sup>) -
+     * avg(a)<sup>2</sup>)</code>
      */
     public static double stdev(double[] a) {
         return Math.sqrt(var(a));
@@ -198,10 +191,9 @@ public class Statistics {
     }
 
     /**
-     * Autocorrelation between 2 arrays a, b. Indices a1,a2,b1,b2 are all
-     * INCLUSIVE. {@link http://de.wikipedia.org/wiki/Autokorrelation#
+     * Autocorrelation between 2 arrays a, b. Indices a1,a2,b1,b2 are all INCLUSIVE. {@link http://de.wikipedia.org/wiki/Autokorrelation#
      * Autokorrelation_in_der_Statistik}
-     * 
+     *
      * @param a array 1
      * @param a1 start index INCLUSIVE
      * @param b array 2
@@ -231,7 +223,7 @@ public class Statistics {
      * Autocorrelation between 2 arrays a, b. {@link http
      * ://de.wikipedia.org/wiki
      * /Autokorrelation#Autokorrelation_in_der_Statistik}
-     * 
+     *
      * @param a array 1
      * @param b array 2
      * @return autocorrelation between a, b
@@ -245,5 +237,29 @@ public class Statistics {
             root = Math.sqrt(var(a) * var(b));
         }
         return covariance(a, b) / root;
+    }
+
+    /**
+     * @see http://en.wikipedia.org/wiki/Mean_square_weighted_deviation
+     * @param values
+     * @param weightFunction that receives the index of the array as input and outputs the accorind weight
+     * @return standard deviation
+     */
+    public static double weightedStdev(double[] values, IntToDoubleFunction weightFunction) {
+        double wx2 = 0, wx = 0, w = 0; // required terms
+
+        double _weight, _x, _wx; // temporary values
+        for (int i = 0; i < values.length; i++) {
+            _weight = weightFunction.applyAsDouble(i);
+            _x = values[i];
+            _wx = _weight * _x;
+
+            w += _weight;
+            wx += _wx;
+            wx2 += _wx * _x;
+        }
+
+        double sigma2 = (wx2 * w - (wx * wx)) / (w * w);
+        return Math.sqrt(sigma2);
     }
 }
