@@ -18,9 +18,9 @@
     </licenses>
 
     <scm>
-        <url>https://code.google.com/p/common-extension-lib/</url>
-        <connection>scm:git:https://code.google.com/p/common-extension-lib</connection>
-        <developerConnection>scm:git:https://code.google.com/p/common-extension-lib</developerConnection>
+        <url>https://github.com/locked-fg/common-extension-lib</url>
+        <connection>scm:git:https://github.com/locked-fg/common-extension-lib.git</connection>
+        <developerConnection>scm:git:https://github.com/locked-fg/common-extension-lib.git</developerConnection>
     </scm>
 
     <developers>
