@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/locked-fg/common-extension-lib.png?branch=master)](https://travis-ci.org/locked-fg/common-extension-lib)
+
 # common-extension-lib
 
 Just some classes that I use very frequently in most of my projects
@@ -39,3 +41,8 @@ Just some classes that I use very frequently in most of my projects
     - Java 6 Compatibility
 - 1.0.0: 
     - maven release
+
+# Deploy
+```
+mvn clean deploy -DskipSigning=false -P release-sign-artifacts
+```
