@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.lmu.ifi.dbs.utilities</groupId>
     <artifactId>common-extension-lib</artifactId>
-    <version>2.4.0</version>
+    <version>2.4.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Common Extension Lib</name>
     <description>A set of handy classes used in several projects.</description>
