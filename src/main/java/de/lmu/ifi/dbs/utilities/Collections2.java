@@ -15,12 +15,12 @@ public class Collections2 {
     /**
      * returns a random sample from the input list
      *
-     * @param <T>
+     * @param <T> generic type param
      * @param in source list
      * @param size size of sample
      * @return UNSORTED random sample from the list
      * @throws NullPointerException if in = null
-     * @throws IllegalArgumentException if size > in.size()
+     * @throws IllegalArgumentException if size &gt; in.size()
      */
     @Deprecated
     public static <T> List<T> randomSample(final Collection<T> in, int size) {
@@ -40,13 +40,13 @@ public class Collections2 {
     /**
      * returns a random sample from the input list
      *
-     * @param <T>
+     * @param <T> generic type param
      * @param in source list
      * @param ratio percentage of returned elements = Math.round(in.size() * ratio
      * @param rnd random seed
      * @return UNSORTED random sample from the list
      * @throws NullPointerException if in = null
-     * @throws IllegalArgumentException if ratio <= 0 || ratio > 1
+     * @throws IllegalArgumentException if ratio &lt;= 0 || ratio &gt; 1
      */
     @Deprecated
     public static <T> List<T> randomSample(final Collection<T> in, double ratio, Random rnd) {
@@ -62,13 +62,13 @@ public class Collections2 {
     /**
      * returns a random sample from the input list
      *
-     * @param <T>
+     * @param <T> generic type param
      * @param in source list
      * @param size size of sample
-     * @return rnd Random seed
+     * @param rnd Random seed
      * @return UNSORTED random sample from the list
      * @throws NullPointerException if in = null
-     * @throws IllegalArgumentException if size > in.size()
+     * @throws IllegalArgumentException if size &gt; in.size()
      */
     @Deprecated
     public static <T> List<T> randomSample(final Collection<T> in, int size, Random rnd) {
@@ -80,10 +80,10 @@ public class Collections2 {
         }
         // sampling = 0, nothing
         if (size == 0) {
-            return new ArrayList<T>(0);
+            return new ArrayList<>(0);
         }
         // sampling = 100% -> all
-        ArrayList<T> out = new ArrayList<T>(in);
+        ArrayList<T> out = new ArrayList<>(in);
         if (size == in.size()) {
             return out;
         }
@@ -101,11 +101,12 @@ public class Collections2 {
     /**
      * Returns a new List with unique elements from the source list.
      *
-     * @param src
+     * @param <T> type param
+     * @param src input collection
      * @return list with unique elements from src
      */
     public static <T> List<T> unique(Collection<T> src) {
-        List<T> dst = new ArrayList<T>(src.size());
+        List<T> dst = new ArrayList<>(src.size());
         for (T elem : src) {
             if (!dst.contains(elem)) {
                 dst.add(elem);
@@ -138,8 +139,8 @@ public class Collections2 {
     }
 
     /**
-     * Find and return the index with the greatest value. If there are >1 maxima with the same value, only the first
-     * index will be returned.
+     * Find and return the index with the greatest value. If there are &gt;1 maxima with the same value, only
+     * the first index will be returned.
      *
      * @param in the collection of objects
      * @return max array index of max value
@@ -159,10 +160,11 @@ public class Collections2 {
     }
 
     /**
-     * Find and return the object the is the max value
+     * Find and return the object which is the max value
      *
-     * @param <T>
-     * @param in
+     * @param <T> type param
+     * @param in input data
+     * @return max value object
      * @see #max(java.util.Collection)
      */
     public static <T extends Comparable> T maxValue(Collection<T> in) {
@@ -178,9 +180,10 @@ public class Collections2 {
     }
 
     /**
-     * Find and return the index with the greatest value. If there are >1 maxima with the same value, only the first
-     * index will be returned.
+     * Find and return the index with the greatest value. If there are &gt;1 maxima with the same value, only the
+     * first index will be returned.
      *
+     * @param <T> type param
      * @param in the collection of objects
      * @param comparator which does the comparisons
      * @return max array index of max value
@@ -200,11 +203,11 @@ public class Collections2 {
     }
 
     /**
-     * Find and return the index with the smallest value. If there are >1 maxima with the same value, only the first
-     * index will be returned.
+     * Find and return the index with the smallest value. If there are &gt;1 maxima with the same value, only the
+     * first index will be returned.
      *
-     * @param a
-     * @return max array index of max value
+     * @param in input data
+     * @return max  index of max value
      */
     public static int min(Collection<? extends Comparable> in) {
         int pos = -1;
@@ -223,8 +226,9 @@ public class Collections2 {
     /**
      * Find and return the object the is the max value
      *
-     * @param <T>
-     * @param in
+     * @param <T> type param
+     * @param in input data
+     * @return min  index of max value
      * @see #max(java.util.Collection)
      */
     public static <T extends Comparable> T minValue(Collection<T> in) {
@@ -240,9 +244,10 @@ public class Collections2 {
     }
 
     /**
-     * Find and return the index with the greatest value. If there are >1 maxima with the same value, only the first
-     * index will be returned.
+     * Find and return the index with the greatest value. If there are &gt;1 maxima with the same value, only the
+     * first index will be returned.
      *
+     * @param <T> type param
      * @param in the collection of objects
      * @param comparator which does the comparisons
      * @return max array index of max value
@@ -264,7 +269,7 @@ public class Collections2 {
     /**
      * calculates the sum of all values in the list
      *
-     * @param list
+     * @param list input data
      * @return sum over all elements
      */
     public static double sum(Collection<? extends Number> list) {
@@ -278,7 +283,7 @@ public class Collections2 {
     /**
      * calculates the mean of all elements in the list
      *
-     * @param list
+     * @param list input data
      * @return mean value
      */
     public static double mean(Collection<? extends Number> list) {
@@ -288,7 +293,7 @@ public class Collections2 {
     /**
      * calculates the variance of the elements in the list
      *
-     * @param list
+     * @param list input data
      * @return variance
      */
     public static double variance(Collection<? extends Number> list) {
@@ -331,30 +336,11 @@ public class Collections2 {
     }
 
     /**
-     * adds b to a: a[i] += b[i] <br> Afterwards a has the size of max(a.size(),b.size())
-     *
-     * @param a
-     * @param b
-     */
-    @Deprecated
-    public static <S extends Number, T extends Number> void addAsInteger(List<T> a, List<S> b) {
-        while (a.size() < b.size()) {
-            a.add((T) Integer.valueOf(0));
-        }
-        Integer ia, ib;
-        for (int i = 0; i < b.size(); i++) {
-            ia = a.get(i).intValue();
-            ib = b.get(i).intValue();
-            a.set(i, (T) Integer.valueOf(ia + ib));
-        }
-    }
-
-    /**
      * returns the last element of the list.
      *
-     * @param <T>
-     * @param list
-     * @return
+     * @param <T> type param
+     * @param list input data
+     * @return last element from the list
      */
     public static <T> T last(List<T> list) {
         return list.get(list.size() - 1);
@@ -363,9 +349,9 @@ public class Collections2 {
     /**
      * returns the last element of the collection.
      *
-     * @param <T>
-     * @param list
-     * @return
+     * @param <T> type param
+     * @param collection input data
+     * @return last element from the collection
      */
     public static <T> T last(Collection<T> collection) {
         int size = collection.size();
@@ -385,12 +371,12 @@ public class Collections2 {
     /**
      * Gets the specific indexed element.
      *
-     * In contrast to regular get() methods, this methods also supports negative numbers to index from the end of the
-     * list like -1 (last element), -2 last but one
+     * In contrast to regular get() methods, this methods also supports negative numbers to index from the end
+     * of the list like -1 (last element), -2 last but one
      *
-     * @param <T>
-     * @param collection
-     * @param i
+     * @param <T> type param
+     * @param collection input data
+     * @param i index of the element (can also be negative, then it's addressed from the end)
      * @return the element at the specified position (negative numbers indicate indexing from last element)
      */
     public static <T> T get(Collection<T> collection, int i) {
