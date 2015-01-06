@@ -127,8 +127,8 @@ public class MultiCountMap<T> {
     /**
      * raises the counter vor the given combination
      *
-     * @param ts
-     * @param inc
+     * @param t object to be added
+     * @param inc value to add to the counter
      * @return new count value
      */
     public double add(T t, double inc) {
@@ -160,8 +160,8 @@ public class MultiCountMap<T> {
     /**
      * sets the counter vor the given combination
      *
-     * @param ts
-     * @param inc
+     * @param t object to be added
+     * @param inc value to set for the counter
      * @return previous count value
      */
     public double set(T t, double inc) {
