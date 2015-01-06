@@ -8,8 +8,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Some useful methods for operating on arrays. Some of the functionalities are
- * also available in Google Guava (min/max for example), while others are not
+ * Some useful methods for operating on arrays. Some of the functionalities are also available in Google Guava
+ * (min/max for example), while others are not
  *
  * @author Franz
  */
@@ -166,8 +166,8 @@ public class Arrays2 {
     }
 
     /**
-     * Returns a new Array with unique elements from the source array. The
-     * length of the returned array is in [0; arr.length]
+     * Returns a new Array with unique elements from the source array. The length of the returned array is in
+     * [0; arr.length]
      *
      * @param arr array from which distinct elments will be removed
      * @return array with unique elements from arr
@@ -185,13 +185,12 @@ public class Arrays2 {
     }
 
     /**
-     * Returns a new array with unique elements from the source array. The
-     * length of the returned array is in [0; arr.length]
+     * Returns a new array with unique elements from the source array. The length of the returned array is in
+     * [0; arr.length]
      *
      * @param arr array from which distinct elments will be removed
      * @return array with unique elements from arr
-     * @deprecated since 2.4.0, use Arrays2#unique(double[] arr, double accuracy
-     * instead)
+     * @deprecated since 2.4.0, use Arrays2#unique(double[] arr, double accuracy instead)
      */
     @SuppressWarnings("unchecked")
     @Deprecated
@@ -210,8 +209,8 @@ public class Arrays2 {
     }
 
     /**
-     * Returns a new array with unique elements from the source array. The
-     * length of the returned array is in [0; arr.length]
+     * Returns a new array with unique elements from the source array. The length of the returned array is in
+     * [0; arr.length]
      *
      * @param arr array from which distinct elments will be removed
      * @return array with unique elements from arr
@@ -231,12 +230,11 @@ public class Arrays2 {
     }
 
     /**
-     * Returns a new Array with unique elements from the source array. The
-     * length of the returned array is in [0; arr.length].
+     * Returns a new Array with unique elements from the source array. The length of the returned array is in
+     * [0; arr.length].
      *
      * @param arr array from which distinct elments will be removed
-     * @param accuracy defines the allowed distance up to which 2 doubles are
-     * equal
+     * @param accuracy defines the allowed distance up to which 2 doubles are equal
      * @return array with unique elements from arr
      */
     @SuppressWarnings("unchecked")
@@ -260,8 +258,7 @@ public class Arrays2 {
     }
 
     /**
-     * join array of objects by using a glue string and the Object's toString
-     * methods.
+     * join array of objects by using a glue string and the Object's toString methods.
      *
      * @param arr elements to be joined
      * @param glue separator which is put between elements
@@ -298,8 +295,7 @@ public class Arrays2 {
     }
 
     /**
-     * join array of objects by using a glue string and the Object's toString
-     * methods.
+     * join array of objects by using a glue string and the Object's toString methods.
      *
      * @param arr elements to be joined
      * @param glue separator which is put between elements
@@ -359,8 +355,7 @@ public class Arrays2 {
     }
 
     /**
-     * return first index of Object o in array a or -1 if the object was not
-     * found
+     * return first index of Object o in array a or -1 if the object was not found
      *
      * @param src source array
      * @param o object to search
@@ -390,8 +385,7 @@ public class Arrays2 {
     }
 
     /**
-     * return first index of integer o in array a or -1 if the integer was not
-     * found
+     * return first index of integer o in array a or -1 if the integer was not found
      *
      * @param src source array
      * @param o object to search
@@ -411,8 +405,7 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data elements to be joined
      * @param glue separator which is put between elements
-     * @return A string containing the objects of <code>data</code> separated by
-     * <code>glue</code>
+     * @return A string containing the objects of <code>data</code> separated by <code>glue</code>
      */
     public static String join(byte[] data, String glue) {
         StringBuilder sb = new StringBuilder(data.length * 2);
@@ -429,8 +422,7 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data elements to be joined
      * @param glue separator which is put between elements
-     * @return A string containing the objects of <code>data</code> separated by
-     * <code>glue</code>
+     * @return A string containing the objects of <code>data</code> separated by <code>glue</code>
      */
     public static String join(int[] data, String glue) {
         StringBuilder sb = new StringBuilder(data.length * 2);
@@ -451,9 +443,8 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data elements to be joined
      * @param glue separator which is put between elements
-     * @return A string containing the objects of <code>data</code> separated by
-     * <code>glue</code>, rounded to the <code>dec</code><sup>th</sup> decimale
-     * place
+     * @return A string containing the objects of <code>data</code> separated by <code>glue</code>, rounded to
+     * the <code>dec</code><sup>th</sup> decimale place
      * @param dec amount of decimals used in the output format
      */
     public static String join(float[] data, String glue, int dec) {
@@ -471,9 +462,8 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data elements to be joined
      * @param glue separator which is put between elements
-     * @return A string containing the objects of <code>data</code> separated by
-     * <code>glue</code>, rounded to the <code>dec</code><sup>th</sup> decimale
-     * place
+     * @return A string containing the objects of <code>data</code> separated by <code>glue</code>, rounded to
+     * the <code>dec</code><sup>th</sup> decimale place
      */
     public static String join(float[] data, String glue) {
         StringBuilder sb = new StringBuilder(data.length * 2);
@@ -490,8 +480,7 @@ public class Arrays2 {
      * @see #join(java.lang.Object[], java.lang.String)
      * @param data elements to be joined
      * @param glue separator which is put between elements
-     * @return A string containing the objects of <code>data</code> separated by
-     * <code>glue</code>
+     * @return A string containing the objects of <code>data</code> separated by <code>glue</code>
      */
     public static String join(double[] data, String glue) {
         StringBuilder sb = new StringBuilder(data.length * 2);
@@ -505,8 +494,7 @@ public class Arrays2 {
     }
 
     /**
-     * Join array of objects by using a glue string and the Object's toString
-     * methods.
+     * Join array of objects by using a glue string and the Object's toString methods.
      *
      * @param data elements to be joined
      * @param glue separator which is put between elements
@@ -530,8 +518,7 @@ public class Arrays2 {
     }
 
     /**
-     * Join array of objects by using a glue string and the Object's toString
-     * methods.
+     * Join array of objects by using a glue string and the Object's toString methods.
      *
      * @param data elements to be joined
      * @param glue separator which is put between elements
@@ -543,7 +530,7 @@ public class Arrays2 {
     }
 
     /**
-     * multilpy array with factor
+     * multiply array with factor
      *
      * @param data source array
      * @param factor each elem will be multiplied with
@@ -558,7 +545,7 @@ public class Arrays2 {
     }
 
     /**
-     * multilpy array with factors from other array: data[i] *= factors[i]
+     * multiply array with factors from other array: data[i] *= factors[i]
      *
      * @param data source array
      * @param factors array of factors each data element will be multiplied with
@@ -578,7 +565,7 @@ public class Arrays2 {
     }
 
     /**
-     * multilpy array with factors from other array: data[i] *= factors[i]
+     * multiply array with factors from other array: data[i] *= factors[i]
      *
      * @param data source array
      * @param factor each elem will be multiplied with
@@ -593,10 +580,10 @@ public class Arrays2 {
     }
 
     /**
-     * multilpy array with factors from other array: data[i] *= factors[i]
+     * multiply array with factors from other array: data[i] *= factors[i]
      *
      * @param data source array
-     * @param factors
+     * @param factors array of factors each data element will be multiplied with
      */
     public static void mul(float[] data, float[] factors) {
         if (data.length != factors.length) {
@@ -613,8 +600,8 @@ public class Arrays2 {
     }
 
     /**
-     * divide an int array by a given value and write the result into a double
-     * array: target[i] = 1d * data[i] / factor;
+     * divide an int array by a given value and write the result into a double array: target[i] = 1d * data[i]
+     * / factor;
      *
      * @param data source array
      * @param factor array of factors each data element will be multiplied with
@@ -646,7 +633,7 @@ public class Arrays2 {
      * divide array by a given value: data[i] /= factor
      *
      * @param data source array
-     * @param factor
+     * @param factor the divisor which is applied to all elements of the array
      */
     public static void div(float[] data, float factor) {
         mul(data, 1 / factor);
@@ -656,7 +643,7 @@ public class Arrays2 {
      * divide array with values from other array: data[i] /= factors[i]
      *
      * @param data source array
-     * @param factors
+     * @param factors array of divisors
      */
     public static void div(float[] data, float[] factors) {
         if (data.length != factors.length) {
@@ -675,7 +662,7 @@ public class Arrays2 {
      * divide array by a given value: data[i] /= factor
      *
      * @param data source array
-     * @param factor
+     * @param factor the divisor which is applied to all elements of the array
      */
     public static void div(double[] data, double factor) {
         if (factor == 0) {
@@ -689,7 +676,7 @@ public class Arrays2 {
      * divide array with values from other array: data[i] /= factors[i]
      *
      * @param data source array
-     * @param factors
+     * @param factors array of divisors
      */
     public static void div(double[] data, double[] factors) {
         if (data.length != factors.length) {
@@ -709,8 +696,8 @@ public class Arrays2 {
      *
      * Values of b won't be changed.
      *
-     * @param a
-     * @param b
+     * @param a mutable array of summands
+     * @param b immutable array of summands (added to a[i])
      */
     public static void add(byte[] a, byte[] b) {
         for (int i = 0; i < b.length; i++) {
@@ -723,8 +710,8 @@ public class Arrays2 {
      *
      * Values of b won't be changed
      *
-     * @param a
-     * @param b
+     * @param a mutable array of summands
+     * @param b immutable array of summands (added to a[i])
      */
     public static void add(int[] a, int[] b) {
         for (int i = 0; i < b.length; i++) {
@@ -737,8 +724,8 @@ public class Arrays2 {
      *
      * Values of b won't be changed
      *
-     * @param a
-     * @param b
+     * @param a mutable array of summands
+     * @param b immutable array of summands (added to a[i])
      */
     public static void add(float[] a, float[] b) {
         for (int i = 0; i < b.length; i++) {
@@ -751,8 +738,8 @@ public class Arrays2 {
      *
      * Values of b won't be changed
      *
-     * @param a
-     * @param b
+     * @param a mutable array of summands
+     * @param b immutable array of summands (added to a[i])
      */
     public static void add(double[] a, double[] b) {
         for (int i = 0; i < b.length; i++) {
@@ -763,8 +750,8 @@ public class Arrays2 {
     /**
      * adds b to a: a[i] += b
      *
-     * @param a
-     * @param b
+     * @param a mutable array of summands
+     * @param b value which is added to all elements of a
      */
     public static void add(double[] a, double b) {
         for (int i = 0; i < a.length; i++) {
@@ -772,18 +759,36 @@ public class Arrays2 {
         }
     }
 
+    /**
+     * adds b to a: a[i] += b
+     *
+     * @param a mutable array of summands
+     * @param b value which is added to all elements of a
+     */
     public static void add(byte[] a, byte b) {
         for (int i = 0; i < a.length; i++) {
             a[i] += b;
         }
     }
 
+    /**
+     * adds b to a: a[i] += b
+     *
+     * @param a mutable array of summands
+     * @param b value which is added to all elements of a
+     */
     public static void add(int[] a, double b) {
         for (int i = 0; i < a.length; i++) {
             a[i] += b;
         }
     }
 
+    /**
+     * adds b to a: a[i] += b
+     *
+     * @param a mutable array of summands
+     * @param b value which is added to all elements of a
+     */
     public static void add(float[] a, double b) {
         for (int i = 0; i < a.length; i++) {
             a[i] += b;
@@ -793,7 +798,7 @@ public class Arrays2 {
     /**
      * Returns the sum of all elements in this array
      *
-     * @param a
+     * @param a input array
      * @return sum of all a_i
      */
     public static double sum(double[] a) {
@@ -807,7 +812,7 @@ public class Arrays2 {
     /**
      * Returns the sum of all elements in this array
      *
-     * @param a
+     * @param a input array
      * @return sum of all a_i
      */
     public static double sum(int[] a) {
@@ -821,7 +826,7 @@ public class Arrays2 {
     /**
      * Returns the sum of all elements in this array
      *
-     * @param a
+     * @param a input array
      * @return sum of all a_i
      */
     public static float sum(float[] a) {
@@ -835,7 +840,7 @@ public class Arrays2 {
     /**
      * Returns the sum of all elements in this array
      *
-     * @param a
+     * @param a input array
      * @return sum of all a_i
      */
     public static int sum(byte[] a) {
@@ -894,23 +899,41 @@ public class Arrays2 {
         return sum;
     }
 
+    /**
+     * subtracts b from each element in a: a[i] -= b
+     *
+     * @param a input array
+     * @param b term that is subtrackted from a
+     */
     public static void sub(int[] a, double b) {
         add(a, -b);
     }
 
+    /**
+     * subtracts b from each element in a: a[i] -= b
+     *
+     * @param a input array
+     * @param b term that is subtrackted from a
+     */
     public static void sub(double[] a, double b) {
         add(a, -b);
     }
 
+    /**
+     * subtracts b from each element in a: a[i] -= b
+     *
+     * @param a input array
+     * @param b term that is subtrackted from a
+     */
     public static void sub(float[] a, float b) {
         add(a, -b);
     }
 
     /**
-     * Performs a[i] = a[i]-b[i]
+     * Performs a[i] = (byte)(a[i]-b[i])
      *
-     * @param a
-     * @param b
+     * @param a input array which is modified
+     * @param b array of elements that is not modified
      */
     public static void sub(byte[] a, byte[] b) {
         for (int i = 0; i < a.length; i++) {
@@ -921,8 +944,8 @@ public class Arrays2 {
     /**
      * Performs a[i] = a[i]-b[i]
      *
-     * @param a
-     * @param b
+     * @param a input array which is modified
+     * @param b array of elements that is not modified
      */
     public static void sub(double[] a, double[] b) {
         for (int i = 0; i < a.length; i++) {
@@ -933,8 +956,8 @@ public class Arrays2 {
     /**
      * Performs a[i] = a[i]-b[i]
      *
-     * @param a
-     * @param b
+     * @param a input array which is modified
+     * @param b array of elements that is not modified
      */
     public static void sub(float[] a, float[] b) {
         for (int i = 0; i < a.length; i++) {
@@ -945,9 +968,9 @@ public class Arrays2 {
     /**
      * Performs out[i] = a[i]-b[i]
      *
-     * @param a
-     * @param b
-     * @param out containing a-b
+     * @param a immutable input array
+     * @param b immutable input array
+     * @param out array that will contain the output
      * @return out
      */
     public static double[] sub(double[] a, double[] b, double[] out) {
@@ -963,9 +986,9 @@ public class Arrays2 {
     /**
      * Performs out[i] = a[i]-b[i]
      *
-     * @param a
-     * @param b
-     * @param out containing a-b
+     * @param a immutable input array
+     * @param b immutable input array
+     * @param out array that will contain the output
      * @return out
      */
     public static float[] sub(float[] a, float[] b, float[] out) {
@@ -984,6 +1007,7 @@ public class Arrays2 {
      * @param in input array which will NOT be changed
      * @param out output array with convolved values
      * @param kernel mask (odd size!)
+     * @return out
      */
     public static int[] convolve(int[] in, int[] out, double[] kernel) {
         if (out == null) {
@@ -1057,6 +1081,7 @@ public class Arrays2 {
      * @param in input array which will NOT be changed
      * @param out output array with convolved values
      * @param kernel mask (odd size!)
+     * @return out
      */
     public static float[] convolve(float[] in, float[] out, double[] kernel) {
         if (out == null) {
@@ -1084,6 +1109,13 @@ public class Arrays2 {
         return out;
     }
 
+    /**
+     * appends two arrays and returns the concatenation
+     *
+     * @param a first array (may be null, defaults to empty array)
+     * @param b second array (may be null, defaults to empty array)
+     * @return a concatenated with b
+     */
     public static double[] append(byte[] a, byte... b) {
         if (a == null) {
             a = new byte[0];
@@ -1098,6 +1130,13 @@ public class Arrays2 {
         return c;
     }
 
+    /**
+     * appends two arrays and returns the concatenation
+     *
+     * @param a first array (may be null, defaults to empty array)
+     * @param b second array (may be null, defaults to empty array)
+     * @return a concatenated with b
+     */
     public static double[] append(double[] a, double... b) {
         if (a == null) {
             a = new double[0];
@@ -1112,6 +1151,13 @@ public class Arrays2 {
         return c;
     }
 
+    /**
+     * appends two arrays and returns the concatenation
+     *
+     * @param a first array (may be null, defaults to empty array)
+     * @param b second array (may be null, defaults to empty array)
+     * @return a concatenated with b
+     */
     public static int[] append(int[] a, int... b) {
         if (a == null) {
             a = new int[0];
@@ -1126,6 +1172,13 @@ public class Arrays2 {
         return c;
     }
 
+    /**
+     * appends two arrays and returns the concatenation
+     *
+     * @param a first array (may be null, defaults to empty array)
+     * @param b second array (may be null, defaults to empty array)
+     * @return a concatenated with b
+     */
     public static float[] append(float[] a, float... b) {
         if (a == null) {
             a = new float[0];
@@ -1141,15 +1194,28 @@ public class Arrays2 {
     }
 
     /**
-     * Find and return the index with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Find and return the <b>index</b> with the greatest value.
      *
-     * @param a
-     * @return max array index of max value or -1 if array is empty or filled
-     * with NaNs
+     * @deprecated since 2.5.0 due to danger of confusion with maxValue()
+     * @see #maxIndex(double[])
+     * @param a input array
+     * @return index of max value or -1 if array is empty or filled with NaNs
      */
+    @Deprecated
     public static int max(double[] a) {
+        return maxIndex(a);
+    }
+
+    /**
+     * Find and return the <b>index</b> with the greatest value.
+     *
+     * If there are &gt; 1 maxima with the same value, only the first index will be returned. NaN entries will be
+     * ignored.
+     *
+     * @param a input array
+     * @return index of max value or -1 if array is empty or filled with NaNs
+     */
+    public static int maxIndex(double[] a) {
         double max = -Double.MAX_VALUE;
         int maxIndex = -1;
 
@@ -1165,37 +1231,79 @@ public class Arrays2 {
     /**
      * returns the greatest value
      *
-     * @param a
-     * @return
+     * @param a input array
+     * @return max value
+     * @throws IllegalArgumentException if array length is zero
      */
     public static double maxValue(double... a) {
         if (a.length == 0) {
             throw new IllegalArgumentException("at least one argument must be given");
         }
-        return a[max(a)];
+        return a[maxIndex(a)];
     }
 
     /**
      * returns the largest value
      *
-     * @param a
-     * @return
+     * @param a input array
+     * @return max value
+     * @throws IllegalArgumentException if array length is zero
      */
     public static double maxValue(int... a) {
         if (a.length == 0) {
             throw new IllegalArgumentException("at least one argument must be given");
         }
-        return a[max(a)];
+        return a[maxIndex(a)];
     }
 
     /**
-     * Find and return the INDEX with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned.
+     * returns the largest value
      *
-     * @param a
-     * @return max array index of max value or -1 if array is empty
+     * @param a input array
+     * @return max value
+     * @throws IllegalArgumentException if array length is zero
+     */
+    public static double maxValue(byte... a) {
+        if (a.length == 0) {
+            throw new IllegalArgumentException("at least one argument must be given");
+        }
+        return a[maxIndex(a)];
+    }
+
+    /**
+     * returns the largest value
+     *
+     * @param a input array
+     * @return max value
+     * @throws IllegalArgumentException if array length is zero
+     */
+    public static double maxValue(float... a) {
+        if (a.length == 0) {
+            throw new IllegalArgumentException("at least one argument must be given");
+        }
+        return a[maxIndex(a)];
+    }
+
+    /**
+     * Find and return the <b>index</b> with the greatest value.
+     *
+     * @deprecated since 2.5.0 due to danger of confusion with maxValue()
+     * @see #maxIndex(int[])
+     * @param a input array
+     * @return index of max value or -1 if array is empty or filled with NaNs
      */
     public static int max(int[] a) {
+        return maxIndex(a);
+    }
+
+    /**
+     * Find and return the INDEX with the greatest value. If there are &gt;1 maxima with the same value, only the
+     * first index will be returned.
+     *
+     * @param a input array
+     * @return max array index of max value or -1 if array is empty
+     */
+    public static int maxIndex(int[] a) {
         int max = Integer.MIN_VALUE;
         int maxIndex = -1;
 
@@ -1209,13 +1317,25 @@ public class Arrays2 {
     }
 
     /**
-     * Find and return the INDEX with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned.
+     * Find and return the <b>index</b> with the greatest value.
      *
-     * @param a
-     * @return max array index of max value or -1 if array is empty
+     * @deprecated since 2.5.0 due to danger of confusion with maxValue()
+     * @see #maxIndex(byte[])
+     * @param a input array
+     * @return index of max value or -1 if array is empty or filled with NaNs
      */
     public static int max(byte[] a) {
+        return maxIndex(a);
+    }
+
+    /**
+     * Find and return the INDEX with the greatest value. If there are &gt;1 maxima with the same value, only the
+     * first index will be returned.
+     *
+     * @param a input array
+     * @return max array index of max value or -1 if array is empty
+     */
+    public static int maxIndex(byte[] a) {
         byte max = Byte.MIN_VALUE;
         int maxIndex = -1;
 
@@ -1229,15 +1349,25 @@ public class Arrays2 {
     }
 
     /**
-     * Find and return the index with the greatest value. If there are >1 maxima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Find and return the <b>index</b> with the greatest value.
      *
-     * @param a
-     * @return max array index of max value or -1 if array is empty or filled
-     * with NaNs
+     * @deprecated since 2.5.0 due to danger of confusion with maxValue()
+     * @see #maxIndex(float[])
+     * @param a input array
+     * @return index of max value or -1 if array is empty or filled with NaNs
      */
     public static int max(float[] a) {
+        return maxIndex(a);
+    }
+
+    /**
+     * Find and return the index with the greatest value. If there are &gt;1 maxima with the same value, only the
+     * first index will be returned. NaN entries will be ignored.
+     *
+     * @param a input array
+     * @return max array index of max value or -1 if array is empty or filled with NaNs
+     */
+    public static int maxIndex(float[] a) {
         float max = Float.MIN_VALUE;
         int maxIndex = -1;
 
@@ -1251,15 +1381,61 @@ public class Arrays2 {
     }
 
     /**
-     * Finds and returns the INDEX with the least value. If there are >1 minima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Finds and returns the INDEX with the least value. If there are &gt;1 minima with the same value, only the
+     * first index will be returned. NaN entries will be ignored.
      *
-     * @param a
-     * @return min array index of min value or -1 if array is empty or filled
-     * with NaNs
+     * @param a input array
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
+     * @deprecated since 2.5.0
      */
     public static int min(byte[] a) {
+        return minIndex(a);
+    }
+
+    /**
+     * Finds and returns the INDEX with the least value. If there are &gt;1 minima with the same value, only the
+     * first index will be returned. NaN entries will be ignored.
+     *
+     * @param a input array
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
+     * @deprecated since 2.5.0
+     */
+    public static int min(double[] a) {
+        return minIndex(a);
+    }
+
+    /**
+     * Finds and returns the index with the least value. If there are &gt;1 minima with the same value, only the
+     * first index will be returned. NaN entries will be ignored.
+     *
+     * @param a input array
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
+     * @deprecated since 2.5.0
+     */
+    public static int min(int[] a) {
+        return minIndex(a);
+    }
+
+    /**
+     * Finds and returns the index with the least value. If there are &gt;1 minima with the same value, only the
+     * first index will be returned. NaN entries will be ignored.
+     *
+     * @param a input array
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
+     * @deprecated since 2.5.0
+     */
+    public static int min(float[] a) {
+        return minIndex(a);
+    }
+
+    /**
+     * Finds and returns the INDEX with the least value. If there are &gt;1 minima with the same value, only the
+     * first index will be returned. NaN entries will be ignored.
+     *
+     * @param a input array
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
+     */
+    public static int minIndex(byte[] a) {
         byte min = Byte.MAX_VALUE;
         int minIndex = -1;
 
@@ -1273,15 +1449,13 @@ public class Arrays2 {
     }
 
     /**
-     * Finds and returns the INDEX with the least value. If there are >1 minima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Finds and returns the INDEX with the least value. If there are &gt;1 minima with the same value, only the
+     * first index will be returned. NaN entries will be ignored.
      *
-     * @param a
-     * @return min array index of min value or -1 if array is empty or filled
-     * with NaNs
+     * @param a input array
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
      */
-    public static int min(double[] a) {
+    public static int minIndex(double[] a) {
         double min = Double.MAX_VALUE;
         int minIndex = -1;
 
@@ -1295,41 +1469,13 @@ public class Arrays2 {
     }
 
     /**
-     * returns the smallest value
+     * Finds and returns the index with the least value. If there are &gt;1 minima with the same value, only the
+     * first index will be returned. NaN entries will be ignored.
      *
-     * @param a
-     * @return
+     * @param a input array
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
      */
-    public static double minValue(double... a) {
-        if (a.length == 0) {
-            throw new IllegalArgumentException("at least one argument must be given");
-        }
-        return a[min(a)];
-    }
-
-    /**
-     * returns the smallest value
-     *
-     * @param a
-     * @return
-     */
-    public static double minValue(int... a) {
-        if (a.length == 0) {
-            throw new IllegalArgumentException("at least one argument must be given");
-        }
-        return a[min(a)];
-    }
-
-    /**
-     * Finds and returns the index with the least value. If there are >1 minima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
-     *
-     * @param a
-     * @return min array index of min value or -1 if array is empty or filled
-     * with NaNs
-     */
-    public static int min(int[] a) {
+    public static int minIndex(int[] a) {
         double min = Double.MAX_VALUE;
         int minIndex = -1;
 
@@ -1343,15 +1489,13 @@ public class Arrays2 {
     }
 
     /**
-     * Finds and returns the index with the least value. If there are >1 minima
-     * with the same value, only the first index will be returned. NaN entries
-     * will be ignored.
+     * Finds and returns the index with the least value. If there are &gt;1 minima with the same value, only the
+     * first index will be returned. NaN entries will be ignored.
      *
-     * @param a
-     * @return min array index of min value or -1 if array is empty or filled
-     * with NaNs
+     * @param a input array
+     * @return min array index of min value or -1 if array is empty or filled with NaNs
      */
-    public static int min(float[] a) {
+    public static int minIndex(float[] a) {
         double min = Float.MAX_VALUE;
         int minIndex = -1;
 
@@ -1365,10 +1509,62 @@ public class Arrays2 {
     }
 
     /**
+     * returns the smallest value
+     *
+     * @param a input array
+     * @return minimum value
+     */
+    public static double minValue(double... a) {
+        if (a.length == 0) {
+            throw new IllegalArgumentException("at least one argument must be given");
+        }
+        return a[minIndex(a)];
+    }
+
+    /**
+     * returns the smallest value
+     *
+     * @param a input array
+     * @return minimum value
+     */
+    public static double minValue(int... a) {
+        if (a.length == 0) {
+            throw new IllegalArgumentException("at least one argument must be given");
+        }
+        return a[minIndex(a)];
+    }
+
+    /**
+     * returns the smallest value
+     *
+     * @param a input array
+     * @return minimum value
+     */
+    public static double minValue(byte... a) {
+        if (a.length == 0) {
+            throw new IllegalArgumentException("at least one argument must be given");
+        }
+        return a[minIndex(a)];
+    }
+
+    /**
+     * returns the smallest value
+     *
+     * @param a input array
+     * @return minimum value
+     */
+    public static double minValue(float... a) {
+        if (a.length == 0) {
+            throw new IllegalArgumentException("at least one argument must be given");
+        }
+        return a[minIndex(a)];
+    }
+
+    /**
      * replaces all NaNs and Infs with r
      *
-     * @param arr
-     * @param r
+     * @param arr input array
+     * @param r replacement value for NaNs
      */
     public static void replaceNaN(double[] arr, double r) {
         for (int i = 0; i < arr.length; i++) {
@@ -1382,8 +1578,8 @@ public class Arrays2 {
      * checks whether an object o is contained in arr
      *
      * @see #indexOf(java.lang.Object[], java.lang.Object)
-     * @param arr
-     * @param o
+     * @param arr haystack
+     * @param o needly
      * @return true if o is in arr
      */
     public static boolean contains(Object[] arr, Object o) {
@@ -1439,10 +1635,10 @@ public class Arrays2 {
     }
 
     /**
-     * Convert string array to doubles - replaces all non numerics with a NaN
-     * and throws a warning message to the logger
+     * Convert string array to doubles - replaces all non numerics with a NaN and throws a warning message to
+     * the logger
      *
-     * @param src
+     * @param src input array
      * @return a <code>double[]</code> for each entry in <code>src</code>
      */
     public static double[] convertToDouble(String[] src) {
@@ -1495,10 +1691,10 @@ public class Arrays2 {
     }
 
     /**
-     * Convert string array to doubles - replaces all non numerics with a NaN
-     * and throws a warning message to the logger
+     * Convert string array to doubles - replaces all non numerics with a NaN and throws a warning message to
+     * the logger
      *
-     * @param src
+     * @param src input array
      * @return a <code>double[]</code> for each entry in <code>src</code>
      */
     public static float[] convertToFloat(String[] src) {
@@ -1551,10 +1747,10 @@ public class Arrays2 {
     }
 
     /**
-     * Convert string array to doubles - replaces all non numerics with a 0 and
-     * throws a warning message to the logger
+     * Convert string array to doubles - replaces all non numerics with a 0 and throws a warning message to
+     * the logger
      *
-     * @param src
+     * @param src input array
      * @return a <code>double[]</code> for each entry in <code>src</code>
      */
     public static int[] convertToInt(String[] src) {
