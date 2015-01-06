@@ -85,9 +85,7 @@ public class PropertyContainer {
     }
 
     /**
-     * The separator sign for arrays/lists etc
-     *
-     * @return
+     * @param separator separator sign for arrays/lists etc
      */
     public void setSeparator(String separator) {
         this.separator = separator;
@@ -99,7 +97,7 @@ public class PropertyContainer {
      * @return
      */
     public List<String> getKeys() {
-        ArrayList<String> l = new ArrayList<String>();
+        ArrayList<String> l = new ArrayList<>();
         for (Object k : properties.keySet()) {
             l.add((String) k);
         }
@@ -284,7 +282,7 @@ public class PropertyContainer {
             return null;
         }
 
-        ArrayList<String> list = new ArrayList<String>(0);
+        ArrayList<String> list = new ArrayList<>(0);
         String[] p = value.split(separator);
         list.addAll(Arrays.asList(p));
         return list;
