@@ -1,5 +1,8 @@
 package de.lmu.ifi.dbs.utilities;
 
+import java.lang.annotation.Annotation;
+import java.util.function.Function;
+import java.util.function.IntToDoubleFunction;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -154,5 +157,32 @@ public class StatisticsTest {
         c[0] += .1;
         result = Statistics.autoCorrelation(a, 1, c, 0, 9);
         assertTrue("was " + result, Math2.isIn(0.9, result, 1));
+    }
+
+    @Test
+    public void testWeightedStdev_weight1() {
+        IntToDoubleFunction f = v -> 0.2d;
+
+        double[] v1 = new double[]{1, 1, 1, 1, 1};
+        double res1 = Statistics.weightedStdev(v1, f);
+        assertEquals(Statistics.stdev(v1), res1, 0.0001);
+
+        double[] v2 = new double[]{1, 2, 3, 4, 5};
+        double res2 = Statistics.weightedStdev(v2, f);
+        assertEquals(Statistics.stdev(v2), res2, 0.0001);
+    }
+
+    @Test
+    public void testWeightedStdev_weightAsc() {
+        IntToDoubleFunction f = v -> v * 1d;
+
+        double[] v1 = new double[]{1, 1, 1, 1, 1};
+        double res1 = Statistics.weightedStdev(v1, f);
+        assertEquals(Statistics.stdev(v1), res1, 0.0001);
+
+        double[] v2 = new double[]{10, 1, 10, 1, 10, 5, 5, 5, 5, 5, 5, 5, 5};
+        double res2 = Statistics.weightedStdev(v2, f);
+        double stdev = Statistics.stdev(v2);
+        assertTrue(res2 + " should be < than " + stdev, res2 < stdev);
     }
 }

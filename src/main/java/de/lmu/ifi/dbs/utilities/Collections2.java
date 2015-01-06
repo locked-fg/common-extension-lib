@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.RandomAccess;
 
+/**
+ * Keep in mind that alot of these fucntions can be achived by Streams as well!
+ */
 public class Collections2 {
 
     private static final int REVERSE_THRESHOLD = 18; // Collections
@@ -22,7 +25,6 @@ public class Collections2 {
      * @throws NullPointerException if in = null
      * @throws IllegalArgumentException if size &gt; in.size()
      */
-    @Deprecated
     public static <T> List<T> randomSample(final Collection<T> in, int size) {
         if (in == null) {
             throw new NullPointerException("in must not be null");
@@ -34,29 +36,7 @@ public class Collections2 {
         if (in == null) {
             throw new NullPointerException("in must not be null");
         }
-        return randomSample(in, ratio, new Random());
-    }
-
-    /**
-     * returns a random sample from the input list
-     *
-     * @param <T> generic type param
-     * @param in source list
-     * @param ratio percentage of returned elements = Math.round(in.size() * ratio
-     * @param rnd random seed
-     * @return UNSORTED random sample from the list
-     * @throws NullPointerException if in = null
-     * @throws IllegalArgumentException if ratio &lt;= 0 || ratio &gt; 1
-     */
-    @Deprecated
-    public static <T> List<T> randomSample(final Collection<T> in, double ratio, Random rnd) {
-        if (in == null) {
-            throw new NullPointerException("in must not be null");
-        }
-        if (ratio <= 0 || ratio > 1) {
-            throw new IllegalArgumentException("ratio must be in ]0,1] but was " + ratio);
-        }
-        return randomSample(in, (int) Math.round(in.size() * ratio), rnd);
+        return randomSample(in, (int) Math.round(in.size() * ratio), new Random());
     }
 
     /**
@@ -65,12 +45,11 @@ public class Collections2 {
      * @param <T> generic type param
      * @param in source list
      * @param size size of sample
-     * @param rnd Random seed
+     * @param rnd Radnom generator
      * @return UNSORTED random sample from the list
      * @throws NullPointerException if in = null
      * @throws IllegalArgumentException if size &gt; in.size()
      */
-    @Deprecated
     public static <T> List<T> randomSample(final Collection<T> in, int size, Random rnd) {
         if (in == null) {
             throw new NullPointerException("in must not be null");
@@ -80,7 +59,7 @@ public class Collections2 {
         }
         // sampling = 0, nothing
         if (size == 0) {
-            return new ArrayList<>(0);
+            return Collections.EMPTY_LIST;
         }
         // sampling = 100% -> all
         ArrayList<T> out = new ArrayList<>(in);
@@ -127,15 +106,16 @@ public class Collections2 {
         return -1;
     }
 
+    /**
+     *
+     * @param in
+     * @param glue
+     * @return
+     * @deprecated since 2.5.0
+     * @see #join(java.util.Collection, java.lang.String)
+     */
     public static String joinToString(List in, String glue) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < in.size(); i++) {
-            sb.append(in.get(i));
-            if (i < in.size() - 1) {
-                sb.append(glue);
-            }
-        }
-        return sb.toString();
+        return join(in, glue);
     }
 
     /**
@@ -343,6 +323,9 @@ public class Collections2 {
      * @return last element from the list
      */
     public static <T> T last(List<T> list) {
+        if (list.isEmpty()) {
+            return null;
+        }
         return list.get(list.size() - 1);
     }
 
@@ -355,14 +338,17 @@ public class Collections2 {
      */
     public static <T> T last(Collection<T> collection) {
         int size = collection.size();
+
         T last = null;
 
         // logic copied from Collections.reverse
-        if (size < REVERSE_THRESHOLD || collection instanceof RandomAccess) {
-            last = ((List<T>) collection).get(size - 1);
-        } else {
-            for (T tmp : collection) {
-                last = tmp;
+        if (size != 0) {
+            if (size < REVERSE_THRESHOLD || collection instanceof RandomAccess) {
+                last = ((List<T>) collection).get(size - 1);
+            } else {
+                for (T tmp : collection) {
+                    last = tmp;
+                }
             }
         }
         return last;

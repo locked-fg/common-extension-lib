@@ -1,5 +1,7 @@
 package de.lmu.ifi.dbs.utilities;
 
+import java.util.function.IntFunction;
+import java.util.function.IntToDoubleFunction;
 import java.util.logging.Logger;
 
 public class Statistics {
@@ -24,7 +26,7 @@ public class Statistics {
 
     /**
      * Get the average value of <code>arr</code> within <code>[a,...,b]</code>.
-     * 
+     *
      * @param arr the input array
      * @param a start index inclusive
      * @param b end index inclusive
@@ -44,7 +46,7 @@ public class Statistics {
 
     /**
      * Get the average value of <code>arr</code> within <code>[a,...,b]</code>.
-     * 
+     *
      * @param arr the input array
      * @param a start index inclusive
      * @param b end index inclusive
@@ -64,7 +66,7 @@ public class Statistics {
 
     /**
      * Get the average value of <code>arr</code> within <code>[a,...,b]</code>.
-     * 
+     *
      * @param arr the input array
      * @param a start index inclusive
      * @param b end index inclusive
@@ -106,9 +108,8 @@ public class Statistics {
     }
 
     /**
-     * Computes the maximum likelihood estimate (assuming a normal distribution)
-     * and NOT the empirical variance.
-     * 
+     * Computes the maximum likelihood estimate (assuming a normal distribution) and NOT the empirical variance.
+     *
      * @param a
      * @return <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a))</code>
      * ,<br>
@@ -131,9 +132,8 @@ public class Statistics {
     }
 
     /**
-     * Computes the maximum likelihood estimate (assuming a normal distribution)
-     * and not the empirical variance.
-     * 
+     * Computes the maximum likelihood estimate (assuming a normal distribution) and not the empirical variance.
+     *
      * @param arr
      * @param a from index
      * @param b to index (inclusive)
@@ -159,9 +159,8 @@ public class Statistics {
     }
 
     /**
-     * Computes the standard deviation of a sample based on the result of
-     * {@link #var(double[])}.
-     * 
+     * Computes the standard deviation of a sample based on the result of {@link #var(double[])}.
+     *
      * @param a
      * @return <code>sqrt(1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a)))</code>
      * ,<br>
@@ -244,5 +243,29 @@ public class Statistics {
             root = Math.sqrt(var(a) * var(b));
         }
         return covariance(a, b) / root;
+    }
+
+    /**
+     * @see http://en.wikipedia.org/wiki/Mean_square_weighted_deviation
+     * @param values
+     * @param weightFunction that receives the index of the array as input and outputs the accorind weight
+     * @return standard deviation
+     */
+    public static double weightedStdev(double[] values, IntToDoubleFunction weightFunction) {
+        double wx2 = 0, wx = 0, w = 0; // required terms
+
+        double _weight, _x, _wx; // temporary values
+        for (int i = 0; i < values.length; i++) {
+            _weight = weightFunction.applyAsDouble(i);
+            _x = values[i];
+            _wx = _weight * _x;
+
+            w += _weight;
+            wx += _wx;
+            wx2 += _wx * _x;
+        }
+
+        double sigma2 = (wx2 * w - (wx * wx)) / (w * w);
+        return Math.sqrt(sigma2);
     }
 }
