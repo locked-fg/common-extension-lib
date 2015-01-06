@@ -9,11 +9,15 @@ Just some classes that I use very frequently in most of my projects
 <dependency>
   <groupId>de.lmu.ifi.dbs</groupId>
   <artifactId>commons-extension-lib</artifactId>
-  <version>2.5.0</version>
+  <version>2.6.0</version>
 </dependency>
 ```
 
 # History
+- 2.6.0: 
+    - fixed javadoc errors
+    - added a lot of javadoc
+    - added min/maxIndex methods in Arrays2 to avoid confusion and deprecated old methods
 - 2.5.0: 
     - added weighted stdev
     - raised dependency to Java 8
