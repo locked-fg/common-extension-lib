@@ -9,11 +9,15 @@ Just some classes that I use very frequently in most of my projects
 <dependency>
   <groupId>de.lmu.ifi.dbs</groupId>
   <artifactId>commons-extension-lib</artifactId>
-  <version>2.4.0</version>
+  <version>2.5.0</version>
 </dependency>
 ```
 
 # History
+2.5.0:
+    - fixed javadoc errors
+    - added a lot of javadoc
+    - added min/maxIndex methods in Arrays2 to avoid confusion and deprecated old methods
 2.4.0:
     - fixed several possible issues marked by findbugs
     - removed ExtensionFilter (use org.apache.commons.io.filefilter.SuffixFileFilter)
