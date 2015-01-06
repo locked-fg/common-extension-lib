@@ -83,7 +83,7 @@ public class Statistics {
     }
 
     /**
-     * Computes the median of an array which is already sorted.<br/>
+     * Computes the median of an array which is already sorted.<br>
      * <em>Warning:</em> If <code>a</code> is not sorted, this method will just
      * return some arbitrary value of <code>a</code> (impair number of elements)
      * or the average value of two arbitrary values of <code>a</code>.
@@ -111,7 +111,7 @@ public class Statistics {
      * 
      * @param a
      * @return <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a))</code>
-     * ,<br/>
+     * ,<br>
      * computed as
      * <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub><sup>2</sup>) - avg(a)<sup>2</sup></code>
      */
@@ -138,7 +138,7 @@ public class Statistics {
      * @param a from index
      * @param b to index (inclusive)
      * @return <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a))</code>
-     * ,<br/>
+     * ,<br>
      * computed as
      * <code>1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub><sup>2</sup>) - avg(a)<sup>2</sup></code>
      */
@@ -164,7 +164,7 @@ public class Statistics {
      * 
      * @param a
      * @return <code>sqrt(1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub> - avg(a)))</code>
-     * ,<br/>
+     * ,<br>
      * computed as
      * <code>sqrt(1 / n * sum<sub>i=1</sub><sup>n</sup>(a<sub>i</sub><sup>2</sup>) - avg(a)<sup>2</sup>)</code>
      */
@@ -199,8 +199,7 @@ public class Statistics {
 
     /**
      * Autocorrelation between 2 arrays a, b. Indices a1,a2,b1,b2 are all
-     * INCLUSIVE. {@link http://de.wikipedia.org/wiki/Autokorrelation#
-     * Autokorrelation_in_der_Statistik}
+     * INCLUSIVE. 
      * 
      * @param a array 1
      * @param a1 start index INCLUSIVE
@@ -208,6 +207,7 @@ public class Statistics {
      * @param b1 start index INCLUSIVE
      * @param w with of the compare window
      * @return autocorrelation between a, b
+     * @see <a href="http://de.wikipedia.org/wiki/Autokorrelation#Autokorrelation_in_der_Statistik">Wikipedia</a>
      */
     public static double autoCorrelation(double[] a, int a1, double[] b,
             int b1, int w) {
@@ -228,13 +228,12 @@ public class Statistics {
     }
 
     /**
-     * Autocorrelation between 2 arrays a, b. {@link http
-     * ://de.wikipedia.org/wiki
-     * /Autokorrelation#Autokorrelation_in_der_Statistik}
+     * Autocorrelation between 2 arrays a, b.
      * 
      * @param a array 1
      * @param b array 2
      * @return autocorrelation between a, b
+     * @see <a href="http://de.wikipedia.org/wiki/Autokorrelation#Autokorrelation_in_der_Statistik">Wikipedia</a>
      */
     public static double autoCorrelation(double[] a, double[] b) {
         double root;
