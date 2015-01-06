@@ -1,6 +1,5 @@
 package de.lmu.ifi.dbs.utilities;
 
-import java.util.function.IntFunction;
 import java.util.function.IntToDoubleFunction;
 import java.util.logging.Logger;
 
