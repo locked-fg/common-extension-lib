@@ -14,7 +14,7 @@ public class EntryComparator {
     /**
      * Compares two {@link Entry}s by their values
      *
-     * @param <T>
+     * @param <T> generic type
      */
     public static class Value<T extends Comparable> implements Comparator<Entry<?, T>> {
 
@@ -39,7 +39,7 @@ public class EntryComparator {
     /**
      * Compares two {@link Entry}s by their keys
      *
-     * @param <T>
+     * @param <T> generic type
      */
     public static class Key<T extends Comparable> implements Comparator<Entry<T, ?>> {
 
